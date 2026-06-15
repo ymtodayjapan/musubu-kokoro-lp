@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>接客力向上研修 提案書｜Today Japan株式会社</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'MS Mincho', Georgia, serif;
+      background: #faf9f7;
+      color: #2c2c2c;
+      line-height: 1.8;
+    }
+
+    /* カバー */
+    .cover {
+      background: linear-gradient(160deg, #1a3a2a 0%, #2d5c40 60%, #3d7a55 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .cover-label {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: #a8d5b8;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+    }
+    .cover-to {
+      font-size: 14px;
+      color: #cce8d5;
+      margin-bottom: 8px;
+      font-family: sans-serif;
+    }
+    .cover-client {
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 50px;
+    }
+    .cover-title {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .cover-subtitle {
+      font-size: clamp(14px, 2.5vw, 18px);
+      color: #a8d5b8;
+      margin-bottom: 60px;
+      font-style: italic;
+    }
+    .cover-line {
+      width: 60px;
+      height: 2px;
+      background: #a8d5b8;
+      margin: 0 auto 40px;
+    }
+    .cover-meta {
+      font-size: 13px;
+      color: #cce8d5;
+      line-height: 2;
+      font-family: sans-serif;
+    }
+
+    /* 本文 */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* セクション */
+    section {
+      padding: 72px 0 48px;
+      border-bottom: 1px solid #e8e4de;
+    }
+    section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: #2d5c40;
+      margin-bottom: 8px;
+      display: block;
+    }
+    h2 {
+      font-size: clamp(22px, 4vw, 30px);
+      color: #1a3a2a;
+      margin-bottom: 32px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #2d5c40;
+    }
+    h3 {
+      font-size: 18px;
+      color: #2d5c40;
+      margin: 32px 0 12px;
+    }
+    p { margin-bottom: 16px; }
+
+    /* キャッチ */
+    .catch-box {
+      background: linear-gradient(135deg, #1a3a2a, #2d5c40);
+      color: #fff;
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      margin: 32px 0;
+    }
+    .catch-box .main-phrase {
+      font-size: clamp(18px, 3.5vw, 26px);
+      font-weight: bold;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .catch-box .sub-phrase {
+      font-size: 14px;
+      color: #a8d5b8;
+      font-family: sans-serif;
+    }
+
+    /* カード */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e0dbd4;
+      border-radius: 8px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .card h4 {
+      font-size: 15px;
+      color: #1a3a2a;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.7;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    /* 研修回テーブル */
+    .session-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+    .session-table th {
+      background: #2d5c40;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: normal;
+    }
+    .session-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e8e4de;
+      vertical-align: top;
+    }
+    .session-table tr:nth-child(even) td { background: #f5f3ef; }
+    .session-table tr:hover td { background: #edf5f0; }
+    .badge {
+      display: inline-block;
+      background: #2d5c40;
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 4px;
+    }
+    .badge.light {
+      background: #a8d5b8;
+      color: #1a3a2a;
+    }
+
+    /* 研修回詳細 */
+    .session-block {
+      background: #fff;
+      border: 1px solid #e0dbd4;
+      border-radius: 10px;
+      padding: 32px 36px;
+      margin: 24px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .session-block .session-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e8e4de;
+    }
+    .session-num-circle {
+      width: 52px;
+      height: 52px;
+      background: #2d5c40;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      flex-shrink: 0;
+      font-family: sans-serif;
+    }
+    .session-block .session-title { font-size: 18px; color: #1a3a2a; margin-bottom: 4px; }
+    .session-block .session-meta { font-size: 13px; color: #888; font-family: sans-serif; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .tag {
+      display: inline-block;
+      background: #edf5f0;
+      color: #2d5c40;
+      font-size: 12px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-family: sans-serif;
+    }
+    .goal-list { list-style: none; padding: 0; }
+    .goal-list li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      font-size: 14px;
+      font-family: sans-serif;
+      color: #444;
+    }
+    .goal-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #2d5c40;
+      font-weight: bold;
+    }
+
+    /* 費用 */
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: sans-serif;
+      font-size: 14px;
+      margin: 20px 0;
+    }
+    .price-table th {
+      background: #1a3a2a;
+      color: #fff;
+      padding: 12px 20px;
+      text-align: left;
+      font-weight: normal;
+    }
+    .price-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid #e8e4de;
+    }
+    .price-table .total td {
+      background: #edf5f0;
+      font-weight: bold;
+      font-size: 16px;
+      color: #1a3a2a;
+    }
+    .price-table .amount { text-align: right; }
+    .note-box {
+      background: #f5f3ef;
+      border-left: 3px solid #a8d5b8;
+      padding: 16px 20px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: sans-serif;
+      color: #555;
+      margin: 16px 0;
+    }
+
+    /* スケジュール */
+    .schedule-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 24px 0;
+      position: relative;
+    }
+    .schedule-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      position: relative;
+    }
+    .schedule-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 25px;
+      top: 60px;
+      bottom: 0;
+      width: 2px;
+      background: #e0dbd4;
+    }
+    .schedule-dot {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #2d5c40;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      flex-shrink: 0;
+      font-family: sans-serif;
+      text-align: center;
+      line-height: 1.3;
+      z-index: 1;
+    }
+    .schedule-content h4 { font-size: 16px; color: #1a3a2a; margin-bottom: 4px; }
+    .schedule-content p { font-size: 13px; color: #666; font-family: sans-serif; margin: 0; }
+    .schedule-content .date { color: #2d5c40; font-weight: bold; margin-right: 8px; }
+
+    /* フッター */
+    footer {
+      background: #1a3a2a;
+      color: #a8d5b8;
+      text-align: center;
+      padding: 60px 24px;
+      font-family: sans-serif;
+      font-size: 14px;
+      line-height: 2.2;
+    }
+    footer .company { font-size: 18px; color: #fff; font-weight: bold; margin-bottom: 8px; }
+    footer .contact { color: #cce8d5; margin-bottom: 4px; }
+
+    @media (max-width: 640px) {
+      .session-block { padding: 24px 20px; }
+      .session-block .session-header { flex-direction: column; }
+      .card-grid { grid-template-columns: 1fr; }
+      .session-table { font-size: 12px; }
+      .session-table th, .session-table td { padding: 10px 12px; }
+    }
+
+    @media print {
+      .cover { page-break-after: always; min-height: unset; padding: 80px 60px; }
+      section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- カバー -->
+<div class="cover">
+  <div class="cover-label">PROPOSAL DOCUMENT 2026</div>
+  <div class="cover-to">提出先</div>
+  <div class="cover-client">扇屋商事株式会社　人事部人事課　仁木みさき 様</div>
+  <div class="cover-title">接客力向上研修<br>提案書</div>
+  <div class="cover-subtitle">〜笑顔と清潔感で、心からの「元気」を届けよう〜</div>
+  <div class="cover-line"></div>
+  <div class="cover-meta">
+    Today Japan株式会社<br>
+    代表　増田 美子<br>
+    2026年6月
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- 1. 提案の背景 -->
+  <section>
+    <span class="section-num">01 / BACKGROUND</span>
+    <h2>提案の背景と目的</h2>
+    <p>
+      扇屋商事株式会社様は、店舗接客の方針転換に伴い、新しい接客スタイルを現場へ浸透させる取り組みを進めています。
+      従来の「形式的な接客スタイル」から、お客様が心地よく過ごせる<strong>「親しみやすい接客スタイル」</strong>への転換は、
+      店舗の空気そのものを変える大きなチャレンジです。
+    </p>
+    <p>
+      本提案は、その転換を「単なるルール変更」で終わらせず、<strong>各店舗に接客文化として根付かせる</strong>ことを目的としています。
+    </p>
+
+    <div class="catch-box">
+      <div class="main-phrase">
+        形を整える接客から、心が伝わる接客へ。<br>
+        現場責任者と接客推進担当者が同じ方向を向き、<br>「笑顔と清潔感で、心からの元気を届ける」文化を育てる。
+      </div>
+      <div class="sub-phrase">新接客キャッチフレーズ：「笑顔と清潔感で、心からの『元気』を届けよう」</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🌱</div>
+        <h4>接客文化として定着させる</h4>
+        <p>文化はルールではなく習慣。現場責任者の言葉が店舗の空気になります。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h4>責任者と推進担当者をつなぐ</h4>
+        <p>同じ方向を向いた時、接客の質は継続的に高まっていきます。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <h4>言葉の力で現場を変える</h4>
+        <p>ペップトークを活用した前向きな声かけが、店舗全体の元気につながります。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h4>単発で終わらない仕組み</h4>
+        <p>研修後も店舗で実践し続けられるアクションプランを一緒に作ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 研修全体設計 -->
+  <section>
+    <span class="section-num">02 / PROGRAM OVERVIEW</span>
+    <h2>研修全体設計</h2>
+    <p>
+      本研修は<strong>「接客文化をつくるリーダー育成プロジェクト」</strong>として設計します。
+      4回シリーズを通じて、現場責任者から接客推進担当者まで、段階的に意識と行動を変えていきます。
+    </p>
+
+    <table class="session-table">
+      <thead>
+        <tr>
+          <th>回</th>
+          <th>日程</th>
+          <th>対象</th>
+          <th>テーマ</th>
+          <th>人数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge">第1回</span></td>
+          <td>2026年9月18日（金）</td>
+          <td>部長・店長など<br>現場責任者</td>
+          <td>接客に取り組む意義と<br>現場責任者の役割</td>
+          <td>約21名</td>
+        </tr>
+        <tr>
+          <td><span class="badge light">第2回</span></td>
+          <td>2026年10月15日（木）</td>
+          <td>接客推進担当者</td>
+          <td>接客のあり方と<br>自己理解・他者理解</td>
+          <td>約8〜9名</td>
+        </tr>
+        <tr>
+          <td><span class="badge light">第3回</span></td>
+          <td>2026年11月20日（金）</td>
+          <td>接客推進担当者</td>
+          <td>言葉がけと<br>接客コミュニケーション</td>
+          <td>約8〜9名</td>
+        </tr>
+        <tr>
+          <td><span class="badge light">第4回</span></td>
+          <td>2027年1月22日（金）</td>
+          <td>接客推進担当者</td>
+          <td>接客のやり方と<br>現場定着</td>
+          <td>約8〜9名</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      ※ 開催時間は別途調整。特に第2回（10月15日）は午後スタートを希望しております。<br>
+      ※ 身だしなみマニュアル・新制服写真を受領後、研修内容に反映いたします。
+    </div>
+  </section>
+
+  <!-- 3. 各回カリキュラム -->
+  <section>
+    <span class="section-num">03 / CURRICULUM</span>
+    <h2>各回カリキュラム詳細</h2>
+
+    <!-- 第1回 -->
+    <div class="session-block">
+      <div class="session-header">
+        <div class="session-num-circle">1</div>
+        <div>
+          <div class="session-title">接客に取り組む意義と現場責任者の役割</div>
+          <div class="session-meta">対象：部長・店長・現場責任者・人事課（約21名）／ 2026年9月18日（金）</div>
+        </div>
+      </div>
+      <p style="font-size:14px;color:#555;font-family:sans-serif;">
+        現場責任者が接客改革の意義を理解し、店舗で接客文化を育てる<strong>「旗振り役」</strong>になるための回。
+        第1回で責任者の腹落ちがあってこそ、2〜4回目の接客推進担当者の研修が現場に定着します。
+      </p>
+      <h4 style="margin-top:20px;color:#1a3a2a;font-size:14px;">主な指導内容</h4>
+      <ul class="goal-list">
+        <li>新接客方針の確認と「形式的な接客」から「親しみやすい接客」への転換</li>
+        <li>接客が顧客満足・リピート・店舗の雰囲気・スタッフ定着に与える影響</li>
+        <li>接客文化とは何か／現場責任者の在り方が接客品質を左右する</li>
+        <li>ペップトーク導入：「指摘」ではなく「成長を促す声かけ」</li>
+        <li>ワーク：明日からの接客推進アクション設定・店舗メッセージ作成</li>
+      </ul>
+      <div class="tag-list">
+        <span class="tag">あり方</span>
+        <span class="tag">接客文化</span>
+        <span class="tag">リーダーシップ</span>
+        <span class="tag">ペップトーク</span>
+        <span class="tag">マナーは愛</span>
+      </div>
+    </div>
+
+    <!-- 第2回 -->
+    <div class="session-block">
+      <div class="session-header">
+        <div class="session-num-circle" style="background:#4a8c63;">2</div>
+        <div>
+          <div class="session-title">接客のあり方と自己理解・他者理解</div>
+          <div class="session-meta">対象：接客推進担当者・人事課（約8〜9名）／ 2026年10月15日（木）</div>
+        </div>
+      </div>
+      <p style="font-size:14px;color:#555;font-family:sans-serif;">
+        接客推進担当者が自分と相手の違いを理解し、店舗のロールモデルとして動ける状態をつくる回。
+        コミュニケーションカードを使って楽しく自己理解・他者理解を深めます。
+      </p>
+      <h4 style="margin-top:20px;color:#1a3a2a;font-size:14px;">主な指導内容</h4>
+      <ul class="goal-list">
+        <li>コミュニケーションカードを活用した自己理解ワーク</li>
+        <li>他者理解：相手のタイプを知り、苦手意識を減らす</li>
+        <li>伝わらない原因の構造理解（なぜ同じ言葉でも受け取り方が違うのか）</li>
+        <li>接客における信頼関係づくり（安心感・親しみやすさ・共感・承認）</li>
+        <li>接客推進担当者としての役割認識：店舗の空気をつくる人</li>
+      </ul>
+      <div class="tag-list">
+        <span class="tag">コミュニケーションカード</span>
+        <span class="tag">自己理解</span>
+        <span class="tag">他者理解</span>
+        <span class="tag">信頼関係</span>
+        <span class="tag">店舗の空気づくり</span>
+      </div>
+    </div>
+
+    <!-- 第3回 -->
+    <div class="session-block">
+      <div class="session-header">
+        <div class="session-num-circle" style="background:#4a8c63;">3</div>
+        <div>
+          <div class="session-title">言葉がけと接客コミュニケーション</div>
+          <div class="session-meta">対象：接客推進担当者・人事課（約8〜9名）／ 2026年11月20日（金）</div>
+        </div>
+      </div>
+      <p style="font-size:14px;color:#555;font-family:sans-serif;">
+        ペップトークを活用して「言葉の力」を実践に落とし込む回。
+        お客様対応だけでなく、スタッフ育成・指導場面での声かけも扱います。
+      </p>
+      <h4 style="margin-top:20px;color:#1a3a2a;font-size:14px;">主な指導内容</h4>
+      <ul class="goal-list">
+        <li>ペップトークの基本：短く・わかりやすく・前向きに・行動につながる言葉</li>
+        <li>NGワードをOKワードへ変換するワーク（「なんでできないの？」→前向きな言葉へ）</li>
+        <li>スタッフ育成への活用：注意・指導の伝え方・承認の言葉・行動を促す声かけ</li>
+        <li>お客様とのコミュニケーション実践（第一声・感謝・クレーム初期対応）</li>
+        <li>ロールプレイ：お客様対応・スタッフへの声かけ・フィードバック</li>
+      </ul>
+      <div class="tag-list">
+        <span class="tag">ペップトーク</span>
+        <span class="tag">言葉の力</span>
+        <span class="tag">前向きな声かけ</span>
+        <span class="tag">育成コミュニケーション</span>
+        <span class="tag">元気を届ける</span>
+      </div>
+    </div>
+
+    <!-- 第4回 -->
+    <div class="session-block">
+      <div class="session-header">
+        <div class="session-num-circle" style="background:#4a8c63;">4</div>
+        <div>
+          <div class="session-title">接客のやり方と現場定着</div>
+          <div class="session-meta">対象：接客推進担当者・人事課（約8〜9名）／ 2027年1月22日（金）</div>
+        </div>
+      </div>
+      <p style="font-size:14px;color:#555;font-family:sans-serif;">
+        研修の締めくくりとして、接客を具体的な行動に落とし込み、店舗別アクションプランと「接客推進宣言」を作る回。
+        12月のビジョン取組み発表会にもつなげやすい内容です。
+      </p>
+      <h4 style="margin-top:20px;color:#1a3a2a;font-size:14px;">主な指導内容</h4>
+      <ul class="goal-list">
+        <li>「笑顔と清潔感」の具体化：表情・声・姿勢・立ち振る舞い・身だしなみ</li>
+        <li>非言語コミュニケーション（目線・うなずき・距離感・身体の向き）</li>
+        <li>接客ロールプレイ（入店〜案内〜声かけ〜退店〜困りごと対応）</li>
+        <li>店舗別アクションプラン作成：明日からすること・続ける仕組み・振り返り方法</li>
+        <li>成果発表：接客推進宣言・店舗別実践計画の共有</li>
+      </ul>
+      <div class="tag-list">
+        <span class="tag">接客実践</span>
+        <span class="tag">笑顔・清潔感</span>
+        <span class="tag">第一印象</span>
+        <span class="tag">ロールプレイ</span>
+        <span class="tag">現場定着</span>
+        <span class="tag">アクションプラン</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. スケジュール -->
+  <section>
+    <span class="section-num">04 / SCHEDULE</span>
+    <h2>実施スケジュール</h2>
+
+    <div class="schedule-flow">
+      <div class="schedule-item">
+        <div class="schedule-dot">2026<br>9月</div>
+        <div class="schedule-content">
+          <h4>第1回　現場責任者研修</h4>
+          <p><span class="date">9月18日（金）</span>部長・店長・現場責任者向け（約21名）</p>
+          <p>新制服（MG）着用後の最初の研修。接客改革の意義を責任者全員で共有します。</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-dot">2026<br>10月</div>
+        <div class="schedule-content">
+          <h4>第2回　接客推進担当者研修①</h4>
+          <p><span class="date">10月15日（木）</span>接客推進担当者・人事課向け（約8〜9名）</p>
+          <p>自己理解・他者理解を通じて、推進担当者としての土台を育てます。</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-dot">2026<br>11月</div>
+        <div class="schedule-content">
+          <h4>第3回　接客推進担当者研修②</h4>
+          <p><span class="date">11月20日（金）</span>接客推進担当者・人事課向け（約8〜9名）</p>
+          <p>言葉の力を使って、お客様にもスタッフにも元気を届ける声かけを身につけます。</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-dot">2026<br>12月</div>
+        <div class="schedule-content">
+          <h4>主任以下新制服導入 ／ ビジョン取組み発表会</h4>
+          <p>研修の成果をビジョン発表会に活かせる内容設計です。</p>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-dot">2027<br>1月</div>
+        <div class="schedule-content">
+          <h4>第4回　接客推進担当者研修③（最終回）</h4>
+          <p><span class="date">1月22日（金）</span>接客推進担当者・人事課向け（約8〜9名）</p>
+          <p>接客の実践定着と、店舗別アクションプラン・接客推進宣言で研修を締めくくります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 費用 -->
+  <section>
+    <span class="section-num">05 / INVESTMENT</span>
+    <h2>お見積り（概算）</h2>
+
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th class="amount">金額</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>講義料（1回 200,000円 × 4回）</td>
+          <td class="amount">800,000円（税別）</td>
+        </tr>
+        <tr>
+          <td>消費税（10%）</td>
+          <td class="amount">80,000円</td>
+        </tr>
+        <tr class="total">
+          <td>合計（税込）</td>
+          <td class="amount">880,000円</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      ※ 交通費（名古屋〜仙台間）：実費別途<br>
+      ※ 宿泊が必要な場合：実費別途<br>
+      ※ 資料印刷費等：必要に応じて別途ご相談<br>
+      ※ 概算予算の目安：約100万円（講義料88万円 ＋ 交通費等）
+    </div>
+  </section>
+
+  <!-- 6. 講師プロフィール -->
+  <section>
+    <span class="section-num">06 / INSTRUCTOR</span>
+    <h2>講師プロフィール</h2>
+
+    <div class="card" style="max-width:100%;">
+      <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <h3 style="margin-top:0;">増田 美子（ますだ よしこ）</h3>
+          <p style="font-size:13px;font-family:sans-serif;color:#555;">Today Japan株式会社　代表</p>
+          <p style="font-size:14px;font-family:sans-serif;color:#444;margin-top:12px;">
+            「マナーは愛」を核に、ビジネスマナー・コミュニケーション・ペップトーク・接客・おもてなし・
+            自己理解・他者理解の分野で研修・講演を行う。<br>
+            日本的な「思いやり」の心を現代の職場に根付かせることをライフワークとしている。
+          </p>
+          <div class="tag-list" style="margin-top:16px;">
+            <span class="tag">ビジネスマナー研修</span>
+            <span class="tag">コミュニケーション研修</span>
+            <span class="tag">ペップトーク</span>
+            <span class="tag">接客・おもてなし</span>
+            <span class="tag">自己理解・他者理解</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- フッター -->
+<footer>
+  <div class="company">Today Japan株式会社</div>
+  <div class="contact">代表　増田 美子</div>
+  <div class="contact">ym.todayjapan@gmail.com</div>
+  <br>
+  <div style="font-size:12px;color:#6a9c7a;">
+    本提案書の内容は、扇屋商事株式会社様との商談目的でのみ使用するものです。<br>
+    無断複製・転載はご遠慮ください。
+  </div>
+</footer>
+
+</body>
+</html>
