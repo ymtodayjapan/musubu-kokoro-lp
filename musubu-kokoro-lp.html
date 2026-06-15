@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>むすぶ心講座｜Today Japan</title>
+<meta name="description" content="長く続いてきた日本の叡智を、いただきます・お箸・おむすび・言葉・所作から学び直し、いただいた命をどう使い、次の時代へどう渡していくかを考える講座です。">
+<style>
+  :root{
+    --ink:#2b2724;
+    --ink-soft:#5b554f;
+    --paper:#fbf8f3;
+    --paper-2:#f4eee4;
+    --gold:#b08d3f;
+    --gold-soft:#d8c79b;
+    --red:#a4262c;
+    --red-soft:#c96a6c;
+    --line:rgba(43,39,36,.14);
+    --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+    --sans:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.9;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .serif{font-family:var(--serif)}
+  section{padding:72px 0}
+  h2{font-family:var(--serif);font-weight:500;font-size:27px;line-height:1.5;letter-spacing:.04em;margin-bottom:8px}
+  .lead{color:var(--gold);font-size:14px;letter-spacing:.22em;margin-bottom:20px}
+  p{margin-bottom:1.1em;color:var(--ink-soft)}
+  .center{text-align:center}
+
+  /* hero */
+  .hero{
+    background:linear-gradient(180deg,#fdfbf7 0%,var(--paper-2) 100%);
+    text-align:center;
+    padding:96px 24px 88px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .knot{font-size:30px;color:var(--red);letter-spacing:.4em;margin-bottom:28px}
+  .hero h1{
+    font-family:var(--serif);font-weight:500;
+    font-size:46px;letter-spacing:.14em;line-height:1.4;color:var(--ink);
+    margin-bottom:24px;
+  }
+  .hero .sub{font-family:var(--serif);font-size:17px;line-height:2;color:var(--ink-soft);letter-spacing:.04em}
+  .hero .sub b{color:var(--red);font-weight:500}
+  .brandline{margin-top:36px;font-size:13px;letter-spacing:.2em;color:var(--gold)}
+
+  /* core message */
+  .core{background:var(--ink);color:#f4efe6;text-align:center;padding:80px 24px}
+  .core .serif{font-size:21px;line-height:2.2;letter-spacing:.06em}
+  .core .em{color:var(--gold-soft)}
+
+  /* theme badge */
+  .theme-mark{
+    display:inline-block;font-family:var(--serif);font-size:30px;letter-spacing:.18em;
+    color:var(--red);border-top:1px solid var(--gold-soft);border-bottom:1px solid var(--gold-soft);
+    padding:14px 36px;margin:8px 0 28px;
+  }
+
+  /* topic cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:32px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 18px;text-align:center;
+  }
+  .card .t{font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:var(--ink);margin-bottom:8px}
+  .card .d{font-size:13px;line-height:1.7;color:var(--ink-soft);margin:0}
+
+  /* three pillars */
+  .pillar{border-left:3px solid var(--gold);padding:6px 0 6px 22px;margin-bottom:28px;border-radius:0}
+  .pillar h3{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.05em;margin-bottom:6px;color:var(--ink)}
+  .pillar p{margin:0;font-size:15px}
+
+  /* philosophy */
+  .philo{background:var(--paper-2)}
+  .philo .quote{font-family:var(--serif);font-size:20px;line-height:2;letter-spacing:.05em;color:var(--ink);margin-bottom:1.4em}
+
+  /* benefit list */
+  ul.benefit{list-style:none;margin-top:24px}
+  ul.benefit li{
+    position:relative;padding:10px 0 10px 30px;border-bottom:1px dashed var(--line);
+    color:var(--ink-soft);font-size:15px;
+  }
+  ul.benefit li:before{content:"結";font-family:var(--serif);color:var(--red);position:absolute;left:0;top:9px;font-size:15px}
+
+  /* audience two-col */
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+  .box{border:1px solid var(--line);border-radius:10px;padding:22px;background:#fff}
+  .box.warn{background:var(--paper-2)}
+  .box h4{font-family:var(--serif);font-weight:500;font-size:16px;margin-bottom:12px;letter-spacing:.05em}
+  .box ul{list-style:none}
+  .box li{font-size:14px;line-height:1.7;padding:4px 0;color:var(--ink-soft)}
+  .box.fit li:before{content:"○";color:var(--gold);margin-right:8px;font-size:12px}
+  .box.warn li:before{content:"—";color:var(--red-soft);margin-right:8px}
+
+  /* outline table */
+  .outline{margin-top:24px;border-top:1px solid var(--line)}
+  .outline .row{display:flex;justify-content:space-between;gap:16px;padding:16px 4px;border-bottom:1px solid var(--line)}
+  .outline .row .k{font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:.08em;min-width:96px}
+  .outline .row .v{font-size:15px;color:var(--ink);text-align:right;flex:1}
+  .price{text-align:center;margin-top:36px}
+  .price .amt{font-family:var(--serif);font-size:40px;color:var(--ink);letter-spacing:.04em}
+  .price .amt small{font-size:18px}
+  .price .note{font-size:13px;color:var(--ink-soft);margin-top:6px}
+
+  /* flow */
+  .flow{text-align:center;margin-top:28px}
+  .flow .step{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 26px;max-width:420px}
+  .flow .step .name{font-family:var(--serif);font-size:18px;color:var(--ink);letter-spacing:.05em}
+  .flow .step .desc{font-size:13px;color:var(--ink-soft);margin-top:4px}
+  .flow .arrow{color:var(--gold);font-size:22px;margin:10px 0}
+
+  /* profile */
+  .profile{background:var(--paper-2);text-align:center}
+  .profile .name{font-family:var(--serif);font-size:24px;letter-spacing:.1em;color:var(--ink);margin:6px 0}
+  .profile .role{color:var(--red);font-size:14px;letter-spacing:.12em;margin-bottom:18px}
+  .profile p{font-size:14px;max-width:560px;margin:0 auto 1em}
+
+  /* cta */
+  .cta{background:var(--ink);text-align:center;padding:84px 24px}
+  .cta h2{color:#f4efe6}
+  .cta p{color:#cfc6b6}
+  .btn{
+    display:inline-block;margin-top:20px;background:var(--red);color:#fff;text-decoration:none;
+    font-family:var(--serif);font-size:18px;letter-spacing:.12em;padding:18px 56px;border-radius:6px;
+    transition:background .2s;
+  }
+  .btn:hover{background:#8e1f25}
+
+  footer{text-align:center;padding:36px 24px;font-size:12px;color:var(--ink-soft);letter-spacing:.1em}
+
+  @media(max-width:640px){
+    .hero h1{font-size:34px}
+    h2{font-size:23px}
+    .twocol{grid-template-columns:1fr}
+    section{padding:56px 0}
+    .core .serif,.philo .quote{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="knot">結</div>
+  <h1>むすぶ心講座</h1>
+  <p class="sub">
+    テストには出ない。<br>
+    でも、<b>人生で役立つ。</b><br>
+    日本に生まれてよかったと思える教養
+  </p>
+  <div class="brandline">Today Japan ｜ 増田美子</div>
+</header>
+
+<section class="core">
+  <div class="wrap">
+    <p class="serif">
+      むすぶ心講座は、<br>
+      長く続いてきた<span class="em">日本の叡智</span>を、<br>
+      いただきます・お箸・おむすび・言葉・所作から学び直し、<br>
+      いただいた命をどう使い、<br>
+      次の時代へどう渡していくかを考える講座です。
+    </p>
+  </div>
+</section>
+
+<section class="center">
+  <div class="wrap">
+    <p class="lead">中心テーマ</p>
+    <div class="theme-mark">永続と循環</div>
+    <p>
+      日本は、長く続いてきた国です。長く続くものには、理由があります。
+      壊さない知恵、つなぐ知恵、祈る心、感謝する心、譲り合う心、命を大切にする心。
+    </p>
+    <p>
+      便利になればなるほど、本当に大切なものを見失いやすくなります。
+      だからこそ今、日本の中にある「永続と循環」の学びを、もう一度思い出すことが大切なのです。
+    </p>
+  </div>
+</section>
+
+<section style="background:var(--paper-2)">
+  <div class="wrap center">
+    <p class="lead">日常の中にある日本の叡智</p>
+    <h2 class="serif">特別な場所ではなく、毎日の暮らしの中に</h2>
+    <div class="grid">
+      <div class="card"><div class="t">いただきます</div><p class="d">命をいただく覚悟と感謝の言葉</p></div>
+      <div class="card"><div class="t">お箸</div><p class="d">一生寄り添う、命と向き合う所作</p></div>
+      <div class="card"><div class="t">おむすび</div><p class="d">米を、手を、心を、人をむすぶ</p></div>
+      <div class="card"><div class="t">水引</div><p class="d">切れにくいご縁と祈りのかたち</p></div>
+      <div class="card"><div class="t">君が代</div><p class="d">小さきものがむすばれていく感性</p></div>
+      <div class="card"><div class="t">ご縁</div><p class="d">過去と未来を、人と人をむすぶ</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="lead center">大切にする3つの柱</p>
+    <div class="pillar">
+      <h3>本学｜根を育てる学び</h3>
+      <p>日本人が大切にしてきた精神性、言葉、感性、祈り、命のつながりを学びます。</p>
+    </div>
+    <div class="pillar">
+      <h3>末学｜日常に活かす学び</h3>
+      <p>お箸、いただきます、おむすび、所作、マナー、コミュニケーションを通して、学びを暮らしに活かします。</p>
+    </div>
+    <div class="pillar">
+      <h3>むすぶ｜未来へ渡す学び</h3>
+      <p>人をむすぶ。次世代をむすぶ。世界をむすぶ。受け取った命と学びを、次の時代へどう渡していくかを考えます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="philo">
+  <div class="wrap">
+    <p class="lead">この講座が大切にしていること</p>
+    <h2 class="serif">自分の声で、自らを信じる力を取り戻す</h2>
+    <p class="quote" style="margin-top:1.2em">
+      むすぶ心講座で大切にしたいのは、誰かに依存する学びではありません。
+    </p>
+    <p>
+      自分の力で、本来大切にしてきた精神性を思い出すこと。
+      自分の声で、自分の命をどう使うかを問い直すこと。自らを信じる力を取り戻すこと。
+    </p>
+    <p>
+      それは、外側の正解や評価に振り回されず、自分の人生を生きる力につながります。
+      日本の教養とは、知識を増やすためだけのものではありません。
+      自分の根を強くし、自分で感じ、自分で選び、自分の人生を生きるための力です。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="lead center">この講座で得られること</p>
+    <ul class="benefit">
+      <li>日本に生まれてよかったと思える感覚</li>
+      <li>日常の中にある日本の叡智への気づき</li>
+      <li>いただきますやお箸に込められた命の学び</li>
+      <li>自分で感じ、自分で考える力</li>
+      <li>自分の言葉で日本を語る力</li>
+      <li>人とのご縁を大切にする感性</li>
+      <li>次世代へ伝えたい日本の教養</li>
+      <li>自分の命をどう使うかを考える時間</li>
+    </ul>
+  </div>
+</section>
+
+<section style="background:var(--paper-2)">
+  <div class="wrap">
+    <p class="lead center">こんな方へ</p>
+    <h2 class="serif center">対象となる方</h2>
+    <div class="twocol">
+      <div class="box fit">
+        <h4>おすすめの方</h4>
+        <ul>
+          <li>日本を自分の言葉で語れるようになりたい方</li>
+          <li>日本文化や精神性に興味がある方</li>
+          <li>子どもや次世代に大切な心を伝えたい方</li>
+          <li>生き方につながる学びを求めている方</li>
+          <li>教育・子育て・講師業・運営に関わる方</li>
+          <li>自分の軸を整え、ご縁を大切に生きたい方</li>
+        </ul>
+      </div>
+      <div class="box warn">
+        <h4>合わない方</h4>
+        <ul>
+          <li>日本の学びを他国との優劣で語りたい方</li>
+          <li>一方的に正解だけを教えてほしい方</li>
+          <li>参加者同士の感じ方を尊重できない方</li>
+          <li>政治的・宗教的な主張を目的とする方</li>
+          <li>すぐに資格や肩書きだけを得たい方</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="lead center">講座概要</p>
+    <h2 class="serif center">開催のご案内</h2>
+    <div class="outline">
+      <div class="row"><span class="k">形式</span><span class="v">オンライン講座＋アーカイブ視聴あり</span></div>
+      <div class="row"><span class="k">回数</span><span class="v">全8回</span></div>
+      <div class="row"><span class="k">時間</span><span class="v">各回 90分</span></div>
+      <div class="row"><span class="k">対象</span><span class="v">大人の方（母親・教育者・講師・運営者など）</span></div>
+      <div class="row"><span class="k">内容</span><span class="v">本学・末学・むすぶ／ワーク・資料つき</span></div>
+    </div>
+    <div class="price">
+      <div class="amt">55,000<small>円</small></div>
+      <div class="note">（資料・ワーク・アーカイブ視聴を含む）</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper-2)">
+  <div class="wrap center">
+    <p class="lead">学びのその先へ</p>
+    <h2 class="serif">講座は「学ぶ場」、コミュニティは「生きる場」</h2>
+    <div class="flow">
+      <div class="step">
+        <div class="name">むすぶ心講座</div>
+        <div class="desc">日本の教養を学ぶ入口</div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="step">
+        <div class="name">TEAM Today Japan</div>
+        <div class="desc">学びを日常・活動・仲間との実践へつなげる継続コミュニティ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile">
+  <div class="wrap">
+    <p class="lead">主催者プロフィール</p>
+    <div class="knot" style="font-size:22px;margin-bottom:10px">結</div>
+    <div class="name">増田 美子</div>
+    <div class="role">むすぶ心を伝える人 ／ 日本人学の教育者</div>
+    <p>Today Japan株式会社 代表取締役。</p>
+    <p>
+      ビジネスマナー、コミュニケーション、ペップトーク、日本文化の学びを通して、
+      人をむすぶ・次世代をむすぶ・世界をむすぶ活動を行う。
+      「日本に生まれてよかった」を、学びと体験で次世代へ届けることを大切にしている。
+    </p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 class="serif">いただいた命を、次の時代へ。</h2>
+    <p>その教養を、今を生きる私たちが受け取り、次の時代へむすんでいきます。</p>
+    <a class="btn" href="#" id="apply">講座に申し込む</a>
+  </div>
+</section>
+
+<footer>
+  © Today Japan Co., Ltd. ｜ むすぶ心講座
+</footer>
+
+</body>
+</html>
