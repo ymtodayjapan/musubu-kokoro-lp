@@ -370,6 +370,115 @@
   }
   .footer a{color:var(--gold-light);text-decoration:none;}
 
+  /* ━━━ ZOOM SECTION ━━━ */
+  .zoom-section{
+    background:var(--ink);
+    padding:56px 0 60px;
+    margin-top:0;
+  }
+  .zoom-header{
+    text-align:center;
+    margin-bottom:36px;
+  }
+  .zoom-eyebrow{
+    font-size:11px;
+    letter-spacing:.22em;
+    color:var(--gold-light);
+    margin-bottom:10px;
+  }
+  .zoom-title{
+    font-family:var(--serif);
+    font-size:clamp(20px,4vw,28px);
+    color:#fbf8f3;
+    letter-spacing:.06em;
+    margin-bottom:10px;
+  }
+  .zoom-schedule{
+    display:inline-block;
+    font-size:12px;
+    color:var(--gold-light);
+    border:1px solid rgba(216,199,155,.35);
+    border-radius:20px;
+    padding:4px 16px;
+    letter-spacing:.06em;
+    margin-bottom:16px;
+  }
+  .zoom-lead{
+    font-size:14px;
+    color:rgba(251,248,243,.65);
+    line-height:1.9;
+  }
+  .zoom-themes{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:36px;
+  }
+  .zoom-card{
+    display:flex;
+    gap:16px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(216,199,155,.18);
+    border-radius:6px;
+    padding:18px 18px;
+    align-items:flex-start;
+  }
+  .zoom-card-num{
+    font-family:var(--serif);
+    font-size:22px;
+    color:var(--gold);
+    flex-shrink:0;
+    width:32px;
+    line-height:1.2;
+    padding-top:2px;
+  }
+  .zoom-card-title{
+    font-family:var(--serif);
+    font-size:16px;
+    color:#fbf8f3;
+    letter-spacing:.04em;
+    margin-bottom:6px;
+  }
+  .zoom-card-text{
+    font-size:13px;
+    color:rgba(251,248,243,.6);
+    line-height:1.85;
+  }
+  .zoom-for{
+    background:rgba(176,141,63,.12);
+    border:1px solid rgba(216,199,155,.25);
+    border-radius:6px;
+    padding:20px 20px;
+  }
+  .zoom-for-title{
+    font-family:var(--serif);
+    font-size:13px;
+    color:var(--gold-light);
+    letter-spacing:.08em;
+    margin-bottom:12px;
+  }
+  .zoom-for-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .zoom-for-list li{
+    font-size:13px;
+    color:rgba(251,248,243,.7);
+    padding-left:16px;
+    position:relative;
+    line-height:1.7;
+  }
+  .zoom-for-list li::before{
+    content:"✦";
+    position:absolute;
+    left:0;
+    color:var(--gold);
+    font-size:9px;
+    top:4px;
+  }
+
   @media(max-width:480px){
     .step{gap:14px;}
     .step-num{width:40px;height:40px;font-size:16px;}
@@ -390,6 +499,75 @@
 <!-- ━━━ INTRO ━━━ -->
 <div class="intro">
   <p>ご入会は、下記５ステップで完了します。<br>順番にお進みください。</p>
+</div>
+
+<!-- ━━━ ZOOM SECTION ━━━ -->
+<div class="zoom-section">
+  <div class="container">
+
+    <div class="zoom-header">
+      <p class="zoom-eyebrow">MONTHLY ZOOM</p>
+      <h2 class="zoom-title">定例Zoomで学べること</h2>
+      <p class="zoom-schedule">月2回開催｜月曜 昼12:00〜 ／ 金曜 夜21:00〜</p>
+      <p class="zoom-lead">日本を知ることで、自分の根っこを思い出し、<br>日常や仕事、人との関わりの中で、自分の命をどう活かしていくかを考える時間です。</p>
+    </div>
+
+    <div class="zoom-themes">
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">01</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">日本の根っこの学び</h3>
+          <p class="zoom-card-text">日本神話・古事記・国旗・国歌・神道・季節の行事を通して、日本人が大切にしてきた心を学びます。「日本とはどんな国か」を自分の言葉で語れる力を育てていきます。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">02</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">マナー・所作・言葉の学び</h3>
+          <p class="zoom-card-text">あいさつ、いただきます、おかげさま、場を整える所作など、日常にある日本の叡智を学びます。形だけの作法ではなく、相手を大切にする心として深めていきます。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">03</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">コミュニケーションの学び</h3>
+          <p class="zoom-card-text">人との関わり方・言葉の選び方・自己理解と他者理解・ビジネスコミュニケーションを学びます。自分の言葉で伝える力、相手を理解する力、場を明るくする力を育てていきます。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">04</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">本学と末学の学び</h3>
+          <p class="zoom-card-text">本学（自分の根っこ・在り方）と末学（言葉・仕事・人間関係の実践）を往復しながら学びます。外側の評価に振り回されず、自分の軸を整えながら社会で活かす力を養います。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">05</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">美子の活動の裏側とプロジェクト共有</h3>
+          <p class="zoom-card-text">増田美子が企画を考え、形にし、世へ届けていく過程をリアルにお伝えします。迷い・工夫・挑戦・修正・実践のプロセスを見ることで、自分の活動や発信に活かしていただけます。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="zoom-for">
+      <p class="zoom-for-title">こんな方におすすめです</p>
+      <ul class="zoom-for-list">
+        <li>日本のことをもっと知りたい方</li>
+        <li>自分の国を自分の言葉で語れるようになりたい方</li>
+        <li>マナーや所作、言葉の力を日常に活かしたい方</li>
+        <li>自分の活動や仕事に、学びをつなげたい方</li>
+        <li>日本に生まれてよかったと思える学びを次世代につなぎたい方</li>
+      </ul>
+    </div>
+
+  </div>
 </div>
 
 <!-- ━━━ STEPS ━━━ -->
