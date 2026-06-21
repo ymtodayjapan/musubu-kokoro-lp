@@ -11,13 +11,16 @@
     --paper:#fbf8f3;
     --paper-2:#f4eee4;
     --gold:#b08d3f;
-    --gold-soft:#d8c79b;
-    --red:#a4262c;
-    --line:rgba(43,39,36,.14);
+    --gold-light:#d8c79b;
+    --gold-pale:#f5edda;
+    --red:#9b2427;
+    --red-deep:#7a1a1c;
+    --line:rgba(43,39,36,.13);
     --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
     --sans:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
   body{
     font-family:var(--sans);
     color:var(--ink);
@@ -27,87 +30,184 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  /* ヘッダー */
+  /* ━━━ HERO ━━━ */
   .hero{
-    background:var(--ink);
-    color:#fbf8f3;
+    position:relative;
+    background:var(--red-deep);
+    overflow:hidden;
+    padding:64px 24px 56px;
     text-align:center;
-    padding:56px 24px 48px;
   }
+  /* 和柄：斜め格子＋花 - SVGパターン背景 */
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect width='60' height='60' fill='none'/%3E%3Cpath d='M0 0 L60 60 M60 0 L0 60' stroke='rgba(255,255,255,.06)' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='10' fill='none' stroke='rgba(255,255,255,.06)' stroke-width='1'/%3E%3Ccircle cx='0' cy='0' r='8' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3Ccircle cx='60' cy='0' r='8' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3Ccircle cx='0' cy='60' r='8' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='8' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+  /* 金のライン飾り */
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:3px;
+    background:linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  }
+
+  /* ロゴ白丸 */
+  .hero-logo-wrap{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100px;height:100px;
+    border-radius:50%;
+    background:#fff;
+    margin-bottom:24px;
+    box-shadow:0 4px 24px rgba(0,0,0,.25);
+  }
+  .hero-logo-wrap img{
+    width:80px;
+    height:auto;
+  }
+
   .hero-label{
     font-family:var(--serif);
     font-size:11px;
-    letter-spacing:.18em;
-    color:var(--gold-soft);
-    margin-bottom:16px;
+    letter-spacing:.22em;
+    color:var(--gold-light);
+    margin-bottom:12px;
+    position:relative;
   }
   .hero-title{
     font-family:var(--serif);
-    font-size:clamp(22px,5vw,34px);
-    letter-spacing:.08em;
-    line-height:1.5;
-    margin-bottom:12px;
+    font-size:clamp(24px,5vw,36px);
+    letter-spacing:.1em;
+    color:#fbf8f3;
+    line-height:1.45;
+    margin-bottom:10px;
+    position:relative;
   }
   .hero-sub{
     font-size:13px;
-    color:rgba(251,248,243,.65);
-    letter-spacing:.06em;
+    color:rgba(251,248,243,.6);
+    letter-spacing:.07em;
+    position:relative;
   }
 
-  /* メイン */
+  /* 金の飾り線（タイトル両脇） */
+  .title-deco{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:10px;
+  }
+  .title-deco span{
+    display:block;
+    height:1px;
+    width:40px;
+    background:linear-gradient(90deg, transparent, var(--gold-light));
+  }
+  .title-deco span:last-child{
+    background:linear-gradient(90deg, var(--gold-light), transparent);
+  }
+  .title-deco-text{
+    font-family:var(--serif);
+    font-size:clamp(24px,5vw,36px);
+    letter-spacing:.1em;
+    color:#fbf8f3;
+    line-height:1.45;
+  }
+
+  /* ━━━ INTRO帯 ━━━ */
+  .intro{
+    background:var(--gold-pale);
+    border-bottom:1px solid var(--gold-light);
+    text-align:center;
+    padding:20px 20px;
+  }
+  .intro p{
+    font-family:var(--serif);
+    font-size:14px;
+    color:var(--ink-soft);
+    letter-spacing:.06em;
+    line-height:1.9;
+  }
+
+  /* ━━━ STEPS ━━━ */
   .container{
     max-width:680px;
     margin:0 auto;
     padding:0 20px 80px;
   }
-
-  /* ステップ全体 */
-  .steps{
-    margin-top:48px;
-  }
+  .steps{margin-top:52px;}
   .steps-title{
     font-family:var(--serif);
-    font-size:13px;
-    letter-spacing:.2em;
+    font-size:12px;
+    letter-spacing:.22em;
     color:var(--gold);
     text-align:center;
-    margin-bottom:32px;
+    margin-bottom:36px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .steps-title::before,.steps-title::after{
+    content:"";flex:1;height:1px;background:var(--gold-light);
   }
 
   /* 各ステップ */
   .step{
     display:flex;
     gap:20px;
-    margin-bottom:40px;
+    margin-bottom:44px;
+  }
+  .step-left{
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
   .step-num{
-    flex-shrink:0;
-    width:44px;
-    height:44px;
+    width:48px;height:48px;
     border-radius:50%;
-    background:var(--ink);
+    background:var(--red);
     color:#fbf8f3;
     font-family:var(--serif);
-    font-size:18px;
+    font-size:19px;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-top:2px;
+    box-shadow:0 2px 8px rgba(154,36,39,.3);
+    flex-shrink:0;
   }
-  .step-body{
+  /* ステップ間の縦線 */
+  .step-line{
     flex:1;
+    width:1px;
+    background:linear-gradient(to bottom, var(--gold-light), transparent);
+    margin-top:8px;
+    min-height:32px;
   }
+  .step:last-child .step-line{display:none;}
+
+  .step-body{flex:1;padding-top:4px;}
   .step-label{
-    font-size:11px;
-    letter-spacing:.14em;
+    font-size:10px;
+    letter-spacing:.2em;
     color:var(--gold);
     margin-bottom:4px;
+    font-family:var(--serif);
   }
   .step-heading{
     font-family:var(--serif);
-    font-size:20px;
+    font-size:21px;
     letter-spacing:.04em;
     margin-bottom:10px;
+    color:var(--ink);
+    line-height:1.4;
   }
   .step-text{
     font-size:14px;
@@ -118,189 +218,271 @@
   /* ボタン */
   .btn{
     display:block;
-    background:var(--red);
-    color:#fbf8f3;
     text-align:center;
     text-decoration:none;
     border-radius:4px;
     padding:14px 20px;
     font-size:14px;
     letter-spacing:.06em;
-    margin-top:16px;
+    margin-top:14px;
     font-family:var(--serif);
+    transition:opacity .18s;
   }
-  .btn:hover{opacity:.88}
+  .btn:hover{opacity:.84}
+  .btn-red{
+    background:var(--red);
+    color:#fbf8f3;
+    border:none;
+  }
   .btn-line{
     background:#06C755;
+    color:#fff;
   }
+  .btn-line + .btn-line{margin-top:10px;}
 
   /* 振込カード */
   .bank-card{
-    background:var(--paper-2);
-    border:1px solid var(--line);
+    background:#fff;
+    border:1px solid var(--gold-light);
     border-radius:6px;
-    padding:20px 20px;
+    overflow:hidden;
     margin-top:16px;
-    font-size:14px;
-    line-height:2;
   }
-  .bank-card .price{
+  .bank-card-head{
+    background:var(--gold);
+    color:#fff;
     font-family:var(--serif);
-    font-size:28px;
+    font-size:12px;
+    letter-spacing:.14em;
+    padding:8px 16px;
+  }
+  .bank-card-body{
+    padding:18px 18px;
+    font-size:14px;
+  }
+  .bank-price{
+    font-family:var(--serif);
+    font-size:30px;
     color:var(--ink);
     letter-spacing:.04em;
-    margin-bottom:4px;
+    margin-bottom:2px;
   }
-  .bank-card .price-note{
+  .bank-price-note{
     font-size:12px;
-    color:var(--ink-soft);
+    color:var(--gold);
+    font-family:var(--serif);
+    letter-spacing:.04em;
     margin-bottom:16px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
   }
-  .bank-card table{
+  .bank-card-body table{
     border-collapse:collapse;
     width:100%;
   }
-  .bank-card td{
-    padding:2px 0;
+  .bank-card-body td{
+    padding:4px 0;
     vertical-align:top;
+    font-size:14px;
   }
-  .bank-card td:first-child{
+  .bank-card-body td:first-child{
     color:var(--ink-soft);
     font-size:12px;
-    width:80px;
+    width:82px;
     padding-right:12px;
     white-space:nowrap;
+    letter-spacing:.04em;
   }
   .bank-note{
     font-size:12px;
     color:var(--ink-soft);
     margin-top:12px;
-  }
-
-  /* 仕切り線 */
-  .divider{
-    border:none;
+    padding-top:10px;
     border-top:1px solid var(--line);
-    margin:8px 0 32px;
   }
 
-  /* ニックネーム説明 */
+  /* ニックネームボックス */
   .nick-box{
-    background:var(--paper-2);
-    border-left:3px solid var(--gold);
-    border-radius:0 4px 4px 0;
+    background:var(--gold-pale);
+    border:1px solid var(--gold-light);
+    border-radius:4px;
     padding:14px 16px;
     font-size:13px;
     color:var(--ink-soft);
     margin-top:14px;
-    line-height:1.8;
+    line-height:1.85;
   }
   .nick-box strong{
+    display:block;
     color:var(--ink);
     font-family:var(--serif);
-    font-size:15px;
+    font-size:14px;
+    margin-bottom:4px;
+  }
+
+  /* 完了メッセージ */
+  .finish{
+    text-align:center;
+    padding:36px 20px 0;
+  }
+  .finish-deco{
+    font-size:28px;
+    color:var(--gold-light);
+    margin-bottom:12px;
+    font-family:var(--serif);
+    letter-spacing:.06em;
+  }
+  .finish-main{
+    font-family:var(--serif);
+    font-size:19px;
+    letter-spacing:.06em;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .finish-sub{
+    font-size:13px;
+    color:var(--ink-soft);
+    letter-spacing:.04em;
+    line-height:1.9;
   }
 
   /* フッター */
   .footer{
+    margin-top:56px;
     background:var(--ink);
-    color:rgba(251,248,243,.55);
     text-align:center;
-    padding:28px 20px;
-    font-size:12px;
-    letter-spacing:.06em;
+    padding:32px 20px;
   }
-  .footer a{color:var(--gold-soft);text-decoration:none;}
+  .footer img{
+    height:28px;
+    width:auto;
+    filter:brightness(0) invert(1);
+    opacity:.7;
+    margin-bottom:10px;
+  }
+  .footer p{
+    font-size:11px;
+    color:rgba(251,248,243,.4);
+    letter-spacing:.08em;
+  }
+  .footer a{color:var(--gold-light);text-decoration:none;}
+
+  @media(max-width:480px){
+    .step{gap:14px;}
+    .step-num{width:40px;height:40px;font-size:16px;}
+  }
 </style>
 </head>
 <body>
 
+<!-- ━━━ HERO ━━━ -->
 <div class="hero">
+  <div class="hero-logo-wrap">
+    <img src="logo.jpg" alt="Today Japan ロゴ">
+  </div>
   <p class="hero-label">TEAM TODAYJAPAN</p>
-  <h1 class="hero-title">入会のご案内</h1>
+  <div class="title-deco">
+    <span></span>
+    <span class="title-deco-text">入会のご案内</span>
+    <span></span>
+  </div>
   <p class="hero-sub">日本のことを学びながら、自分の根っこを整える場へ</p>
 </div>
 
+<!-- ━━━ INTRO ━━━ -->
+<div class="intro">
+  <p>ご入会は、下記３ステップで完了します。<br>順番にお進みください。</p>
+</div>
+
+<!-- ━━━ STEPS ━━━ -->
 <div class="container">
   <div class="steps">
-    <p class="steps-title">— ご入会の流れ —</p>
+    <div class="steps-title">ご入会の流れ</div>
 
     <!-- STEP 1 -->
     <div class="step">
-      <div class="step-num">1</div>
+      <div class="step-left">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+      </div>
       <div class="step-body">
         <p class="step-label">STEP 01</p>
         <h2 class="step-heading">入会フォームのご記入</h2>
         <p class="step-text">下のボタンからフォームにお進みいただき、必要事項をご入力ください。</p>
-        <a class="btn" href="https://forms.gle/Czmiuc8msJhi52xu8" target="_blank" rel="noopener">
+        <a class="btn btn-red" href="https://forms.gle/Czmiuc8msJhi52xu8" target="_blank" rel="noopener">
           入会フォームへ進む →
         </a>
       </div>
     </div>
 
-    <hr class="divider">
-
     <!-- STEP 2 -->
     <div class="step">
-      <div class="step-num">2</div>
+      <div class="step-left">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+      </div>
       <div class="step-body">
         <p class="step-label">STEP 02</p>
         <h2 class="step-heading">年会費のお振込み</h2>
         <p class="step-text">フォームご記入後、下記口座へ年会費をお振込みください。<br>ご入金の確認をもって、ご入会完了となります。</p>
 
         <div class="bank-card">
-          <div class="price">150,000円<span style="font-size:14px;font-family:var(--sans);">（税込）</span></div>
-          <div class="price-note">いいご縁の15万円。大切なご縁を育てる参加費です。</div>
-          <table>
-            <tr><td>銀行名</td><td>三井住友銀行　名古屋支店（481）</td></tr>
-            <tr><td>口座種別</td><td>普通</td></tr>
-            <tr><td>口座番号</td><td>8134091</td></tr>
-            <tr><td>口座名義</td><td>TodayJapan株式会社</td></tr>
-          </table>
-          <p class="bank-note">※振込手数料はご負担くださいますようお願い申し上げます。</p>
+          <div class="bank-card-head">お振込先</div>
+          <div class="bank-card-body">
+            <div class="bank-price">150,000<span style="font-size:15px;font-family:var(--sans);">円（税込）</span></div>
+            <div class="bank-price-note">いいご縁の15万円。大切なご縁を育てる参加費です。</div>
+            <table>
+              <tr><td>銀行名</td><td>三井住友銀行　名古屋支店（481）</td></tr>
+              <tr><td>口座種別</td><td>普通</td></tr>
+              <tr><td>口座番号</td><td>8134091</td></tr>
+              <tr><td>口座名義</td><td>TodayJapan株式会社</td></tr>
+            </table>
+            <p class="bank-note">※振込手数料はご負担くださいますようお願い申し上げます。</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <hr class="divider">
-
     <!-- STEP 3 -->
     <div class="step">
-      <div class="step-num">3</div>
+      <div class="step-left">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+      </div>
       <div class="step-body">
         <p class="step-label">STEP 03</p>
         <h2 class="step-heading">オープンチャットへのご参加</h2>
-        <p class="step-text">ご入金確認後、2つのLINEオープンチャットへご参加ください。<br>どちらも<strong>ニックネームはご本名（氏名）</strong>でご登録をお願いします。</p>
+        <p class="step-text">ご入金確認後、2つのLINEオープンチャットへご参加ください。</p>
 
         <div class="nick-box">
-          <strong>ニックネームの設定について</strong><br>
-          TEAM TodayJapanでは、本名でのご参加をお願いしています。<br>
-          例）増田美子　/ Masuda Yoshiko
+          <strong>ニックネームの設定について</strong>
+          どちらも<b>ニックネーム（氏名）</b>の形式でご登録をお願いします。<br>
+          例）よしこさーん（増田美子）
         </div>
 
         <a class="btn btn-line" href="https://line.me/ti/g2/st63r4ZxiYDpJEWQae-P02RsLFc3LmiAg8OqcA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener">
           ① オープンチャット「TEAM Today Japan」に参加する
         </a>
-        <a class="btn btn-line" href="https://line.me/ti/g2/QRxEPZn4x953aJmwNloIbRBB1Lezl6UkSIt02A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" style="margin-top:10px;">
+        <a class="btn btn-line" href="https://line.me/ti/g2/QRxEPZn4x953aJmwNloIbRBB1Lezl6UkSIt02A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener">
           ② オープンチャット「TJ交流ルーム」に参加する
         </a>
       </div>
     </div>
 
-    <hr class="divider">
-
-    <!-- 完了メッセージ -->
-    <div style="text-align:center;padding:8px 0 16px;">
-      <p style="font-family:var(--serif);font-size:18px;letter-spacing:.06em;margin-bottom:8px;">ようこそ、TEAM TodayJapanへ。</p>
-      <p style="font-size:13px;color:var(--ink-soft);">ご一緒できることを、心から楽しみにしています。<br>弥栄</p>
+    <!-- 完了 -->
+    <div class="finish">
+      <div class="finish-deco">〜　弥栄　〜</div>
+      <p class="finish-main">ようこそ、TEAM TodayJapanへ。</p>
+      <p class="finish-sub">ご一緒できることを、心から楽しみにしています。<br>Today Japan　増田美子</p>
     </div>
 
   </div>
 </div>
 
+<!-- ━━━ FOOTER ━━━ -->
 <div class="footer">
-  <p>© Today Japan株式会社</p>
-  <p style="margin-top:6px;"><a href="https://todayjapan.net">todayjapan.net</a></p>
+  <img src="logo.jpg" alt="Today Japan">
+  <p>© Today Japan株式会社 ／ <a href="https://todayjapan.net">todayjapan.net</a></p>
 </div>
 
 </body>
