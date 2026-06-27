@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEAM TodayJapan のご紹介</title>
+<style>
+  :root{
+    --ink:#2b2724;
+    --ink-soft:#5b554f;
+    --paper:#fbf8f3;
+    --paper-2:#f4eee4;
+    --gold:#b08d3f;
+    --gold-light:#d8c79b;
+    --gold-pale:#f5edda;
+    --red:#9b2427;
+    --red-deep:#7a1a1c;
+    --line:rgba(43,39,36,.13);
+    --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+    --sans:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.9;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ━━━ HERO ━━━ */
+  .hero{
+    position:relative;
+    background:var(--red-deep);
+    overflow:hidden;
+    padding:64px 24px 56px;
+    text-align:center;
+  }
+  /* 和柄：斜め格子＋花 - SVGパターン背景 */
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect width='60' height='60' fill='none'/%3E%3Cpath d='M0 0 L60 60 M60 0 L0 60' stroke='rgba(255,255,255,.06)' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='10' fill='none' stroke='rgba(255,255,255,.06)' stroke-width='1'/%3E%3Ccircle cx='0' cy='0' r='8' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3Ccircle cx='60' cy='0' r='8' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3Ccircle cx='0' cy='60' r='8' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='8' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+  /* 金のライン飾り */
+  .hero::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:3px;
+    background:linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+  }
+
+  /* バナーロゴ */
+  .hero-logo-wrap{
+    display:inline-block;
+    background:#fff;
+    border-radius:6px;
+    padding:10px 24px;
+    margin-bottom:24px;
+    box-shadow:0 4px 20px rgba(0,0,0,.2);
+  }
+  .hero-logo-wrap img{
+    height:36px;
+    width:auto;
+    display:block;
+  }
+
+  .hero-label{
+    font-family:var(--serif);
+    font-size:11px;
+    letter-spacing:.22em;
+    color:var(--gold-light);
+    margin-bottom:18px;
+    position:relative;
+  }
+  .hero-catch{
+    font-family:var(--serif);
+    font-size:clamp(18px,4.2vw,24px);
+    color:#fbf8f3;
+    letter-spacing:.08em;
+    line-height:1.8;
+    margin-bottom:14px;
+    position:relative;
+  }
+  .hero-title{
+    font-family:var(--serif);
+    font-size:clamp(24px,5vw,36px);
+    letter-spacing:.1em;
+    color:#fbf8f3;
+    line-height:1.45;
+    margin-bottom:10px;
+    position:relative;
+  }
+  .hero-sub{
+    font-size:13px;
+    color:rgba(251,248,243,.6);
+    letter-spacing:.07em;
+    position:relative;
+  }
+
+  /* 金の飾り線（タイトル両脇） */
+  .title-deco{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:10px;
+  }
+  .title-deco span{
+    display:block;
+    height:1px;
+    width:40px;
+    background:linear-gradient(90deg, transparent, var(--gold-light));
+  }
+  .title-deco span:last-child{
+    background:linear-gradient(90deg, var(--gold-light), transparent);
+  }
+  .title-deco-text{
+    font-family:var(--serif);
+    font-size:clamp(24px,5vw,36px);
+    letter-spacing:.1em;
+    color:#fbf8f3;
+    line-height:1.45;
+  }
+
+  /* ━━━ INTRO帯 ━━━ */
+  .intro{
+    background:var(--gold-pale);
+    border-bottom:1px solid var(--gold-light);
+    text-align:center;
+    padding:20px 20px;
+  }
+  .intro p{
+    font-family:var(--serif);
+    font-size:14px;
+    color:var(--ink-soft);
+    letter-spacing:.06em;
+    line-height:1.9;
+  }
+
+  /* ━━━ STEPS ━━━ */
+  .container{
+    max-width:680px;
+    margin:0 auto;
+    padding:0 20px 80px;
+  }
+  .steps{margin-top:52px;}
+  .steps-title{
+    font-family:var(--serif);
+    font-size:12px;
+    letter-spacing:.22em;
+    color:var(--gold);
+    text-align:center;
+    margin-bottom:36px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .steps-title::before,.steps-title::after{
+    content:"";flex:1;height:1px;background:var(--gold-light);
+  }
+
+  /* 各ステップ */
+  .step{
+    display:flex;
+    gap:20px;
+    margin-bottom:44px;
+  }
+  .step-left{
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .step-num{
+    width:48px;height:48px;
+    border-radius:50%;
+    background:var(--red);
+    color:#fbf8f3;
+    font-family:var(--serif);
+    font-size:19px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 8px rgba(154,36,39,.3);
+    flex-shrink:0;
+  }
+  /* ステップ間の縦線 */
+  .step-line{
+    flex:1;
+    width:1px;
+    background:linear-gradient(to bottom, var(--gold-light), transparent);
+    margin-top:8px;
+    min-height:32px;
+  }
+  .step:last-child .step-line{display:none;}
+
+  .step-body{flex:1;padding-top:4px;}
+  .step-label{
+    font-size:10px;
+    letter-spacing:.2em;
+    color:var(--gold);
+    margin-bottom:4px;
+    font-family:var(--serif);
+  }
+  .step-heading{
+    font-family:var(--serif);
+    font-size:21px;
+    letter-spacing:.04em;
+    margin-bottom:10px;
+    color:var(--ink);
+    line-height:1.4;
+  }
+  .step-text{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.85;
+  }
+
+  /* ボタン */
+  .btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    border-radius:4px;
+    padding:14px 20px;
+    font-size:14px;
+    letter-spacing:.06em;
+    margin-top:14px;
+    font-family:var(--serif);
+    transition:opacity .18s;
+  }
+  .btn:hover{opacity:.84}
+  .btn-red{
+    background:var(--red);
+    color:#fbf8f3;
+    border:none;
+  }
+  .btn-line{
+    background:#06C755;
+    color:#fff;
+  }
+  .btn-line + .btn-line{margin-top:10px;}
+  .btn-instagram{
+    background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);
+    color:#fff;
+  }
+
+  /* 振込カード */
+  .bank-card{
+    background:#fff;
+    border:1px solid var(--gold-light);
+    border-radius:6px;
+    overflow:hidden;
+    margin-top:16px;
+  }
+  .bank-card-head{
+    background:var(--gold);
+    color:#fff;
+    font-family:var(--serif);
+    font-size:12px;
+    letter-spacing:.14em;
+    padding:8px 16px;
+  }
+  .bank-card-body{
+    padding:18px 18px;
+    font-size:14px;
+  }
+  .bank-price{
+    font-family:var(--serif);
+    font-size:30px;
+    color:var(--ink);
+    letter-spacing:.04em;
+    margin-bottom:2px;
+  }
+  .bank-price-note{
+    font-size:12px;
+    color:var(--gold);
+    font-family:var(--serif);
+    letter-spacing:.04em;
+    margin-bottom:16px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .bank-card-body table{
+    border-collapse:collapse;
+    width:100%;
+  }
+  .bank-card-body td{
+    padding:4px 0;
+    vertical-align:top;
+    font-size:14px;
+  }
+  .bank-card-body td:first-child{
+    color:var(--ink-soft);
+    font-size:12px;
+    width:82px;
+    padding-right:12px;
+    white-space:nowrap;
+    letter-spacing:.04em;
+  }
+  .bank-note{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:12px;
+    padding-top:10px;
+    border-top:1px solid var(--line);
+  }
+
+  /* ニックネームボックス */
+  .nick-box{
+    background:var(--gold-pale);
+    border:1px solid var(--gold-light);
+    border-radius:4px;
+    padding:14px 16px;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    line-height:1.85;
+  }
+  .nick-box strong{
+    display:block;
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:14px;
+    margin-bottom:4px;
+  }
+
+  /* 完了メッセージ */
+  .finish{
+    text-align:center;
+    padding:36px 20px 0;
+  }
+  .finish-deco{
+    font-size:28px;
+    color:var(--gold-light);
+    margin-bottom:12px;
+    font-family:var(--serif);
+    letter-spacing:.06em;
+  }
+  .finish-main{
+    font-family:var(--serif);
+    font-size:19px;
+    letter-spacing:.06em;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .finish-sub{
+    font-size:13px;
+    color:var(--ink-soft);
+    letter-spacing:.04em;
+    line-height:1.9;
+  }
+
+  /* フッター */
+  .footer{
+    margin-top:56px;
+    background:var(--ink);
+    text-align:center;
+    padding:32px 20px;
+  }
+  .footer img{
+    height:44px;
+    width:auto;
+    margin-bottom:12px;
+    background:#fff;
+    padding:6px 12px;
+    border-radius:4px;
+  }
+  .footer p{
+    font-size:11px;
+    color:rgba(251,248,243,.4);
+    letter-spacing:.08em;
+  }
+  .footer a{color:var(--gold-light);text-decoration:none;}
+
+  /* ━━━ ZOOM SECTION ━━━ */
+  .zoom-section{
+    background:var(--paper-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:56px 0 60px;
+  }
+  .zoom-header{
+    text-align:center;
+    margin-bottom:36px;
+  }
+  .zoom-eyebrow{
+    font-size:11px;
+    letter-spacing:.22em;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .zoom-title{
+    font-family:var(--serif);
+    font-size:clamp(20px,4vw,28px);
+    color:var(--ink);
+    letter-spacing:.06em;
+    margin-bottom:10px;
+  }
+  .zoom-schedule{
+    display:inline-block;
+    font-size:12px;
+    color:var(--ink-soft);
+    border:1px solid var(--gold-light);
+    border-radius:20px;
+    padding:4px 16px;
+    letter-spacing:.06em;
+    margin-bottom:16px;
+    background:#fff;
+  }
+  .zoom-lead{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.9;
+  }
+  .zoom-themes{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:28px;
+  }
+  .zoom-card{
+    display:flex;
+    gap:16px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:3px solid var(--gold);
+    border-radius:0 6px 6px 0;
+    padding:16px 18px;
+    align-items:flex-start;
+  }
+  .zoom-card-num{
+    font-family:var(--serif);
+    font-size:20px;
+    color:var(--gold);
+    flex-shrink:0;
+    width:28px;
+    line-height:1.2;
+    padding-top:2px;
+  }
+  .zoom-card-title{
+    font-family:var(--serif);
+    font-size:16px;
+    color:var(--ink);
+    letter-spacing:.04em;
+    margin-bottom:6px;
+  }
+  .zoom-card-text{
+    font-size:13px;
+    color:var(--ink-soft);
+    line-height:1.85;
+  }
+  .zoom-for{
+    background:#fff;
+    border:1px solid var(--gold-light);
+    border-radius:6px;
+    padding:20px 20px;
+  }
+  .zoom-for-title{
+    font-family:var(--serif);
+    font-size:13px;
+    color:var(--gold);
+    letter-spacing:.08em;
+    margin-bottom:12px;
+  }
+  .zoom-for-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .zoom-for-list li{
+    font-size:13px;
+    color:var(--ink-soft);
+    padding-left:16px;
+    position:relative;
+    line-height:1.7;
+  }
+  .zoom-for-list li::before{
+    content:"✦";
+    position:absolute;
+    left:0;
+    color:var(--gold);
+    font-size:9px;
+    top:4px;
+  }
+
+  /* ━━━ GAINS SECTION ━━━ */
+  .gains{
+    text-align:center;
+    padding:56px 0 8px;
+  }
+  .gains-eyebrow{
+    font-size:11px;
+    letter-spacing:.22em;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .gains-title{
+    font-family:var(--serif);
+    font-size:clamp(19px,4vw,26px);
+    color:var(--ink);
+    letter-spacing:.06em;
+    margin-bottom:32px;
+  }
+  .gains-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:420px;
+    margin:0 auto 32px;
+  }
+  .gains-item{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:var(--paper-2);
+    border:1px solid var(--gold-light);
+    border-radius:6px;
+    padding:14px 20px;
+    text-align:left;
+  }
+  .gains-mark{
+    flex-shrink:0;
+    width:40px;height:40px;
+    border-radius:50%;
+    background:var(--red);
+    color:#fbf8f3;
+    font-family:var(--serif);
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .gains-item-text{
+    font-size:15px;
+    color:var(--ink-soft);
+    font-family:var(--serif);
+    letter-spacing:.03em;
+  }
+  .gains-item-text b{
+    color:var(--ink);
+    font-weight:600;
+  }
+  .gains-message{
+    font-family:var(--serif);
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:2;
+    letter-spacing:.04em;
+  }
+  .gains-sign{
+    font-family:var(--serif);
+    font-size:16px;
+    color:var(--gold);
+    letter-spacing:.2em;
+    margin-top:16px;
+  }
+
+  @media(max-width:480px){
+    .step{gap:14px;}
+    .step-num{width:40px;height:40px;font-size:16px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ━━━ HERO ━━━ -->
+<div class="hero">
+  <div class="hero-logo-wrap">
+    <img src="logo.jpg" alt="Today Japan ロゴ">
+  </div>
+  <p class="hero-label">TEAM TODAYJAPAN</p>
+  <p class="hero-catch">自分の価値を思い出し、輝くこと。<br>私たちはもっともっと、心美人に。</p>
+  <p class="hero-sub">日本のことを学びながら、自分の根っこを整える場へ</p>
+</div>
+
+<!-- ━━━ INTRO ━━━ -->
+<div class="intro">
+  <p>ご入会は、下記５ステップで完了します。<br>順番にお進みください。</p>
+</div>
+
+<!-- ━━━ ZOOM SECTION ━━━ -->
+<div class="zoom-section">
+  <div class="container">
+
+    <div class="zoom-header">
+      <p class="zoom-eyebrow">MONTHLY ZOOM</p>
+      <h2 class="zoom-title">定例Zoomで学べること</h2>
+      <p class="zoom-schedule">月2回開催｜月曜 昼12:00〜 ／ 金曜 夜21:00〜</p>
+      <p class="zoom-lead">日本を知ることで、自分の根っこを思い出し、<br>日常や仕事、人との関わりの中で、自分の命をどう活かしていくかを考える時間です。</p>
+    </div>
+
+    <div class="zoom-themes">
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">01</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">日本の根っこの学び</h3>
+          <p class="zoom-card-text">日本神話・古事記・国旗・国歌・神道・季節の行事を通して、日本人が大切にしてきた心を学びます。国を知ることは、自分を知ること。日本の根っこにふれることで、自分自身の根っこも見えてきます。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">02</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">マナー・所作・言葉の学び</h3>
+          <p class="zoom-card-text">あいさつ、いただきます、おかげさま、場を整える所作など、日常にある日本の叡智を学びます。形だけの作法ではなく、相手を大切にする心として深めていきます。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">03</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">コミュニケーションの学び</h3>
+          <p class="zoom-card-text">人との関わり方・言葉の選び方・自己理解と他者理解・ビジネスコミュニケーションを学びます。さらに心理学や脳科学の視点も取り入れながら、自分の言葉で伝える力、相手を理解する力、場を明るくする力を育てていきます。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">04</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">本学と末学の学び</h3>
+          <p class="zoom-card-text">本学（自分の根っこ・在り方）と末学（言葉・仕事・人間関係の実践）を往復しながら学びます。外側の評価に振り回されず、自分の軸を整えながら社会で活かす力を養います。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">05</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">活動の裏側とプロジェクト共有</h3>
+          <p class="zoom-card-text">企画を考え、形にし、世へ届けていく過程をリアルに共有します。メンバーそれぞれの挑戦や活動も持ち寄り、迷い・工夫・修正・実践のプロセスを分かち合うことで、自分の活動や発信にも活かしていただけます。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">06</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">個別セッションあり</h3>
+          <p class="zoom-card-text">あなたの「なりたい」「やりたい」を言葉にしていただき、それを現実にしていくための個別セッションをご用意しています。メンバー一人ひとりの自己実現に向けて、増田美子が直接伴走します。</p>
+        </div>
+      </div>
+
+      <div class="zoom-card">
+        <div class="zoom-card-num">07</div>
+        <div class="zoom-card-body">
+          <h3 class="zoom-card-title">ランチ会・ディナー会</h3>
+          <p class="zoom-card-text">学びの場だけでなく、ランチ会やディナー会もあります。食事の席でマナーや所作を実践しながら、メンバー同士のコミュニケーションを深められます。さらに、増田美子の人脈とのイベントへのアテンドもございます。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="zoom-for">
+      <p class="zoom-for-title">こんな方におすすめです</p>
+      <ul class="zoom-for-list">
+        <li>日本のことをもっと知りたい方</li>
+        <li>自分の国を自分の言葉で語れるようになりたい方</li>
+        <li>マナーや所作、言葉の力を日常に活かしたい方</li>
+        <li>自分の活動や仕事に、学びをつなげたい方</li>
+        <li>日本に生まれてよかったと思える学びを次世代につなぎたい方</li>
+        <li>周りを優先してきた女性</li>
+        <li>本当はもっと挑戦したい女性</li>
+        <li>「私なんて」「今さら」と自分の可能性を小さくしている女性</li>
+        <li>自分の命をどう使うかを考えたい女性</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ━━━ GAINS SECTION ━━━ -->
+<div class="container">
+  <div class="gains">
+    <p class="gains-eyebrow">WHAT YOU GAIN</p>
+    <h2 class="gains-title">TEAM TodayJapanで身につくもの</h2>
+
+    <div class="gains-list">
+      <div class="gains-item">
+        <span class="gains-mark">心</span>
+        <p class="gains-item-text">自信につながる<b>言葉がけ</b></p>
+      </div>
+      <div class="gains-item">
+        <span class="gains-mark">礼</span>
+        <p class="gains-item-text">信頼につながる<b>マナー・所作</b></p>
+      </div>
+      <div class="gains-item">
+        <span class="gains-mark">和</span>
+        <p class="gains-item-text">誇りが育つ<b>日本の教養</b></p>
+      </div>
+    </div>
+
+    <p class="gains-message">
+      この3つは、人生にも、仕事にも、人間関係にもつながります。<br><br>
+      日本を知ることは、自分の根っこを思い出すこと。<br>
+      学びを日常に活かしながら、自分の命を最大限に輝かせていきましょう。
+    </p>
+    <p class="gains-sign">弥栄</p>
+  </div>
+</div>
+
+<!-- ━━━ CLOSING ━━━ -->
+<div class="container">
+  <div class="finish" style="padding-top:8px;">
+    <div class="finish-deco">〜　弥栄　〜</div>
+    <p class="finish-main">日本を学びながら、自分の命を輝かせる。</p>
+    <p class="finish-sub">TEAM TodayJapanで、ご一緒できることを<br>心から楽しみにしています。<br>Today Japan　増田美子</p>
+    <a class="btn btn-line" href="https://lin.ee/qvsABYA" target="_blank" rel="noopener" style="max-width:340px;margin:24px auto 0;">
+      まずは公式LINEでお問い合わせ
+    </a>
+  </div>
+</div>
+
+<!-- ━━━ FOOTER ━━━ -->
+<div class="footer">
+  <img src="logo.jpg" alt="Today Japan">
+  <p>© Today Japan株式会社 ／ <a href="https://todayjapan.net">todayjapan.net</a></p>
+</div>
+
+</body>
+</html>
