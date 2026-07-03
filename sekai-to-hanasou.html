@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界と話そう🌏 日本を伝えよう🇯🇵｜外国人インタビュー体験プログラム</title>
+<style>
+  :root{
+    --ink:#3a3632;
+    --ink-soft:#6b6560;
+    --paper:#fffdf8;
+    --paper-2:#fff7ee;
+    --sky:#3fa9e0;
+    --sky-deep:#2b8fc6;
+    --sky-pale:#e8f6fd;
+    --pink:#f5849b;
+    --pink-deep:#e86a86;
+    --pink-pale:#fdeef1;
+    --green:#68c69a;
+    --green-deep:#4fb184;
+    --green-pale:#eaf7f0;
+    --yellow:#ffcf4d;
+    --yellow-pale:#fff5d6;
+    --line:rgba(58,54,50,.10);
+    --sans:"Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.95;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:720px;margin:0 auto;padding:0 22px;}
+
+  /* ━━━ HERO ━━━ */
+  .hero{
+    position:relative;
+    text-align:center;
+    padding:52px 22px 130px;
+    background:linear-gradient(180deg,#7fd0f0 0%,#a9e0f5 55%,#d7f0fb 100%);
+    overflow:hidden;
+  }
+  /* ふんわり雲 */
+  .hero::before,.hero::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.55);
+    filter:blur(2px);
+  }
+  .hero::before{width:180px;height:60px;top:60px;left:-30px;box-shadow:60px 20px 0 -6px rgba(255,255,255,.5);}
+  .hero::after{width:150px;height:52px;top:110px;right:-20px;box-shadow:-70px 26px 0 -8px rgba(255,255,255,.45);}
+  .hero-inner{position:relative;z-index:2;}
+  .hero-logo{
+    display:inline-block;background:#fff;border-radius:14px;
+    padding:12px 26px;margin-bottom:26px;
+    box-shadow:0 6px 20px rgba(43,143,198,.22);
+  }
+  .hero-logo img{height:54px;width:auto;display:block;}
+  .hero-eyebrow{
+    display:inline-block;
+    background:#fff;color:var(--sky-deep);
+    font-size:12px;font-weight:700;letter-spacing:.14em;
+    padding:6px 18px;border-radius:999px;margin-bottom:20px;
+    box-shadow:0 4px 14px rgba(43,143,198,.18);
+  }
+  .hero-title{
+    font-size:clamp(30px,7.4vw,50px);
+    font-weight:800;letter-spacing:.02em;line-height:1.32;
+    color:#fff;
+    text-shadow:0 3px 14px rgba(43,143,198,.35);
+    margin-bottom:18px;
+  }
+  .hero-catch{
+    display:inline-block;
+    background:#fff;
+    color:var(--pink-deep);
+    font-size:clamp(17px,4.4vw,24px);
+    font-weight:800;letter-spacing:.04em;
+    padding:10px 26px;border-radius:999px;
+    box-shadow:0 8px 22px rgba(232,106,134,.22);
+  }
+  /* 波形の切れ目 */
+  .hero-wave{
+    position:absolute;left:0;right:0;bottom:-1px;z-index:1;
+    display:block;width:100%;height:70px;
+  }
+
+  /* ━━━ 見出し共通 ━━━ */
+  .sec{padding:52px 0 8px;}
+  .sec-eyebrow{
+    text-align:center;font-size:12px;font-weight:700;
+    letter-spacing:.2em;color:var(--sky);margin-bottom:8px;
+  }
+  .sec-title{
+    text-align:center;
+    font-size:clamp(22px,5vw,30px);
+    font-weight:800;letter-spacing:.03em;line-height:1.45;
+    margin-bottom:8px;
+  }
+  .sec-title .u{
+    background:linear-gradient(transparent 62%, var(--yellow-pale) 62%);
+    padding:0 .1em;
+  }
+  .sec-lead{
+    text-align:center;font-size:15px;color:var(--ink-soft);
+    line-height:2;margin:14px auto 0;max-width:560px;
+  }
+
+  /* ━━━ はじめに ━━━ */
+  .intro-card{
+    background:var(--sky-pale);
+    border-radius:22px;
+    padding:34px 26px;
+    margin-top:6px;
+    text-align:center;
+  }
+  .intro-card .q{
+    font-size:clamp(18px,4.4vw,22px);font-weight:800;
+    color:var(--sky-deep);margin:0 0 14px;letter-spacing:.02em;
+  }
+  .intro-card p{font-size:15px;color:var(--ink-soft);line-height:2;}
+  .intro-card .big{
+    display:inline-block;margin-top:18px;
+    font-size:clamp(17px,4.2vw,21px);font-weight:800;color:var(--ink);
+    background:linear-gradient(transparent 60%, #ffe6ec 60%);
+    padding:0 .2em;
+  }
+
+  /* ━━━ 4つの柱 ━━━ */
+  .pillars{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
+    margin-top:22px;
+  }
+  .pillar{
+    flex:1 1 120px;max-width:150px;
+    background:#fff;border:2px solid var(--line);
+    border-radius:18px;padding:20px 12px;text-align:center;
+  }
+  .pillar .em{font-size:30px;display:block;margin-bottom:8px;}
+  .pillar .t{font-weight:800;font-size:15px;}
+  .pillar:nth-child(1){border-color:#ffd7de;background:var(--pink-pale);}
+  .pillar:nth-child(2){border-color:#bfe6f7;background:var(--sky-pale);}
+  .pillar:nth-child(3){border-color:#ffe7a8;background:var(--yellow-pale);}
+  .pillar:nth-child(4){border-color:#c4ebd5;background:var(--green-pale);}
+  .pillars-note{
+    text-align:center;font-size:15px;color:var(--ink-soft);
+    line-height:2;margin-top:20px;
+  }
+  .pillars-note b{color:var(--sky-deep);}
+
+  /* ━━━ おすすめ ━━━ */
+  .check-list{
+    display:flex;flex-direction:column;gap:10px;
+    max-width:520px;margin:24px auto 0;
+  }
+  .check-item{
+    display:flex;align-items:center;gap:14px;
+    background:#fff;border:2px solid var(--line);
+    border-radius:14px;padding:13px 18px;
+  }
+  .check-item .ck{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;
+    background:var(--green);color:#fff;font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .check-item .tx{font-size:15px;font-weight:600;}
+
+  /* ━━━ プログラム内容 ━━━ */
+  .prog{
+    background:#fff;border:2px solid var(--line);
+    border-radius:22px;padding:26px 24px;margin-top:22px;
+  }
+  .prog + .prog{margin-top:16px;}
+  .prog-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .prog-badge{
+    flex-shrink:0;font-size:12px;font-weight:800;letter-spacing:.06em;
+    color:#fff;padding:6px 14px;border-radius:999px;
+  }
+  .prog-badge.on{background:var(--sky);}
+  .prog-badge.real{background:var(--pink);}
+  .prog-title{font-size:19px;font-weight:800;letter-spacing:.02em;}
+  .prog-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .prog-list li{
+    position:relative;padding-left:22px;font-size:15px;color:var(--ink-soft);
+    line-height:1.8;
+  }
+  .prog-list li::before{
+    content:"";position:absolute;left:2px;top:11px;
+    width:9px;height:9px;border-radius:50%;background:var(--yellow);
+  }
+  .prog-sub{margin-top:16px;}
+  .prog-sub:first-of-type{margin-top:4px;}
+  .prog-sub-label{
+    display:inline-block;font-size:13px;font-weight:800;color:var(--sky-deep);
+    background:var(--sky-pale);border-radius:999px;padding:5px 14px;margin-bottom:10px;
+    letter-spacing:.02em;
+  }
+  .phrase-box{
+    background:var(--sky-pale);border-radius:14px;
+    padding:16px 18px;margin-top:14px;
+  }
+  .phrase-box .lbl{font-size:13px;font-weight:800;color:var(--sky-deep);margin-bottom:8px;}
+  .phrase-box .ph{
+    display:inline-block;background:#fff;border-radius:999px;
+    font-size:14px;font-weight:700;color:var(--sky-deep);
+    padding:6px 15px;margin:3px 4px 3px 0;
+  }
+  .phrase-box .after{font-size:14px;color:var(--ink-soft);margin-top:12px;line-height:1.9;}
+
+  /* ━━━ 育つ力 ━━━ */
+  .powers{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;
+  }
+  .power{
+    background:#fff;border:2px solid var(--line);border-radius:18px;
+    padding:20px 8px 16px;text-align:center;
+  }
+  .power .em{font-size:28px;display:block;margin-bottom:6px;}
+  .power .t{font-size:14px;font-weight:800;line-height:1.4;}
+  .power:nth-child(3n+1){background:var(--pink-pale);border-color:#ffd7de;}
+  .power:nth-child(3n+2){background:var(--sky-pale);border-color:#bfe6f7;}
+  .power:nth-child(3n){background:var(--green-pale);border-color:#c4ebd5;}
+
+  /* ━━━ 英語が苦手でも ━━━ */
+  .ok-card{
+    background:linear-gradient(135deg,#fff2f5,#fef6ec);
+    border:2px dashed var(--pink);
+    border-radius:22px;padding:32px 26px;text-align:center;margin-top:6px;
+  }
+  .ok-card .big{
+    font-size:clamp(19px,4.8vw,26px);font-weight:800;color:var(--pink-deep);
+    line-height:1.5;margin-bottom:14px;
+  }
+  .ok-card p{font-size:15px;color:var(--ink-soft);line-height:2;}
+
+  /* ━━━ 参加対象 ━━━ */
+  .target{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+    max-width:560px;margin:22px auto 0;
+  }
+  .target span{
+    background:#fff;border:2px solid var(--sky);color:var(--sky-deep);
+    font-size:14px;font-weight:700;border-radius:999px;padding:7px 16px;
+  }
+  .target-note{text-align:center;font-size:14px;color:var(--ink-soft);margin-top:14px;}
+
+  /* ━━━ 料金 3プラン ━━━ */
+  .plans{
+    display:flex;flex-direction:column;gap:16px;margin-top:24px;
+  }
+  .plan{
+    border-radius:22px;overflow:hidden;
+    border:2px solid var(--line);background:#fff;
+  }
+  .plan-head{
+    padding:20px 22px 16px;text-align:center;color:#fff;
+  }
+  .plan.a .plan-head{background:linear-gradient(135deg,#f5849b,#f7a0b3);}
+  .plan.b .plan-head{background:linear-gradient(135deg,#3fa9e0,#6fc4ec);}
+  .plan.c .plan-head{background:linear-gradient(135deg,#68c69a,#8ad6b3);}
+  .plan-name{font-size:20px;font-weight:800;letter-spacing:.04em;margin-bottom:4px;}
+  .plan-price{font-size:30px;font-weight:800;letter-spacing:.02em;}
+  .plan-price small{font-size:15px;font-weight:700;}
+  .plan-body{padding:18px 22px 22px;}
+  .plan-body ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .plan-body li{
+    position:relative;padding-left:26px;font-size:15px;font-weight:600;
+    line-height:1.7;
+  }
+  .plan-body li::before{
+    content:"✓";position:absolute;left:0;top:0;
+    font-weight:800;
+  }
+  .plan.a li::before{color:var(--pink-deep);}
+  .plan.b li::before{color:var(--sky-deep);}
+  .plan.c li::before{color:var(--green-deep);}
+
+  .plan-extra{
+    background:var(--yellow-pale);border-radius:16px;
+    padding:16px 20px;margin-top:16px;
+    font-size:14px;color:var(--ink-soft);line-height:1.9;text-align:center;
+  }
+  .plan-extra b{color:var(--ink);}
+
+  /* Tシャツ（自由参加） */
+  .tshirt{
+    display:flex;gap:16px;align-items:center;
+    background:var(--pink-pale);border:2px solid #ffd7de;
+    border-radius:18px;padding:18px 20px;margin-top:16px;
+  }
+  .tshirt .em{font-size:34px;flex-shrink:0;}
+  .tshirt .tx{font-size:14px;color:var(--ink-soft);line-height:1.85;}
+  .tshirt .tx b{display:block;color:var(--pink-deep);font-size:15px;font-weight:800;margin-bottom:3px;}
+
+  /* ━━━ 締め ━━━ */
+  .closing{
+    background:linear-gradient(180deg,#a9e0f5,#d7f0fb);
+    text-align:center;padding:56px 24px 60px;margin-top:56px;
+  }
+  .closing .em{font-size:34px;margin-bottom:12px;}
+  .closing .msg{
+    font-size:clamp(22px,5.4vw,30px);font-weight:800;color:#fff;
+    text-shadow:0 3px 12px rgba(43,143,198,.3);line-height:1.5;margin-bottom:18px;
+  }
+  .closing p{font-size:15px;color:#3a5c6e;line-height:2;}
+  .closing .sign{
+    margin-top:22px;font-size:15px;font-weight:700;color:#2b6a86;letter-spacing:.04em;
+  }
+
+  /* ━━━ フッター ━━━ */
+  .footer{
+    background:var(--ink);text-align:center;padding:30px 20px;
+  }
+  .footer img{
+    height:40px;width:auto;background:#fff;padding:6px 12px;
+    border-radius:8px;margin-bottom:12px;
+  }
+  .footer p{font-size:11px;color:rgba(255,253,248,.45);letter-spacing:.06em;}
+  .footer a{color:#8fd3f0;text-decoration:none;}
+
+  @media(max-width:480px){
+    .powers{grid-template-columns:repeat(2,1fr);}
+    .pillar{max-width:none;flex:1 1 42%;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ━━━ HERO ━━━ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-logo"><img src="logo.jpg" alt="Today Japan ロゴ"></div>
+    <div class="hero-eyebrow">外国人インタビュー体験プログラム</div>
+    <h1 class="hero-title">世界と話そう 🌏<br>日本を伝えよう 🇯🇵</h1>
+    <span class="hero-catch">世界はもっと仲良くなれる。</span>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,80 480,0 720,30 C960,60 1200,20 1440,45 L1440,70 L0,70 Z" fill="#fffdf8"/>
+  </svg>
+</div>
+
+<div class="container">
+
+  <!-- ━━━ はじめに ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">INTRODUCTION</p>
+    <h2 class="sec-title">はじめに</h2>
+    <div class="intro-card">
+      <p class="q">「英語が話せたらいいな」</p>
+      <p>2026年、愛知・名古屋にはアジア大会をきっかけに、<br>世界中から多くの人が訪れます。<br><br>
+      そう思っていても、一歩踏み出せない人は少なくありません。<br>
+      私たちは、英語を勉強するだけではなく、</p>
+      <span class="big">世界と仲良くなる体験</span>
+      <p style="margin-top:14px;">を、子どもから大人まで届けたいと考えています。</p>
+    </div>
+  </section>
+
+  <!-- ━━━ 大切にすること ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">OUR VALUE</p>
+    <h2 class="sec-title">このプログラムで<br class="sp"><span class="u">大切にすること</span></h2>
+    <div class="pillars">
+      <div class="pillar"><span class="em">🗣️</span><span class="t">英語</span></div>
+      <div class="pillar"><span class="em">🌏</span><span class="t">国際交流</span></div>
+      <div class="pillar"><span class="em">✨</span><span class="t">自己表現</span></div>
+      <div class="pillar"><span class="em">🔍</span><span class="t">探究</span></div>
+    </div>
+    <p class="pillars-note">
+      英語は目的ではありません。<br>
+      <b>世界の人とつながるための、コミュニケーションツール</b>です。
+    </p>
+  </section>
+
+  <!-- ━━━ こんな方におすすめ ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">RECOMMENDED</p>
+    <h2 class="sec-title">こんな方に<span class="u">おすすめ</span></h2>
+    <div class="check-list">
+      <div class="check-item"><span class="ck">✓</span><span class="tx">英語を話してみたい</span></div>
+      <div class="check-item"><span class="ck">✓</span><span class="tx">海外の人と交流してみたい</span></div>
+      <div class="check-item"><span class="ck">✓</span><span class="tx">日本の魅力を伝えたい</span></div>
+      <div class="check-item"><span class="ck">✓</span><span class="tx">子どもに勇気と自信をつけてほしい</span></div>
+      <div class="check-item"><span class="ck">✓</span><span class="tx">夏休みに特別な体験をしたい</span></div>
+      <div class="check-item"><span class="ck">✓</span><span class="tx">親子で参加したい</span></div>
+    </div>
+  </section>
+
+  <!-- ━━━ プログラム内容 ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">PROGRAM</p>
+    <h2 class="sec-title">プログラム<span class="u">内容</span></h2>
+    <p class="sec-lead">オンラインで準備を整え、<br>名古屋城で「本物の世界」と出会います。</p>
+
+    <div class="prog">
+      <div class="prog-head">
+        <span class="prog-badge on">STEP 1</span>
+        <span class="prog-title">オンライン講座（全3回）</span>
+      </div>
+      <div class="prog-sub">
+        <span class="prog-sub-label">📅 事前オンライン 全2回｜名古屋城へ行く前に</span>
+        <ul class="prog-list">
+          <li>世界と話すための基本フレーズ</li>
+          <li>日本の紹介のしかた</li>
+          <li>外国人とのコミュニケーション</li>
+          <li>名古屋城での体験準備</li>
+        </ul>
+      </div>
+      <div class="prog-sub">
+        <span class="prog-sub-label">💭 振り返りオンライン 全1回｜体験のあとに</span>
+        <ul class="prog-list">
+          <li>体験の振り返りと、感じたことの分かち合い</li>
+          <li>これからの「世界とのつながり」を考える時間</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prog">
+      <div class="prog-head">
+        <span class="prog-badge real">STEP 2</span>
+        <span class="prog-title">名古屋城で体験</span>
+      </div>
+      <ul class="prog-list">
+        <li>外国の方へインタビューにチャレンジ</li>
+        <li>世界地図へシールを貼ってもらい、世界中の人との交流を楽しむ</li>
+      </ul>
+      <div class="phrase-box">
+        <p class="lbl">たとえば、こんな声かけから 💬</p>
+        <span class="ph">Where are you from?</span>
+        <span class="ph">Is this your first time in Japan?</span>
+        <span class="ph">Do you like Nagoya?</span>
+        <p class="after">翻訳アプリでは味わえない、自分の声で伝える楽しさがあります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━ 育つ力 ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">WHAT YOU GAIN</p>
+    <h2 class="sec-title">この体験で<span class="u">育つ力</span></h2>
+    <div class="powers">
+      <div class="power"><span class="em">💪</span><span class="t">勇気</span></div>
+      <div class="power"><span class="em">✨</span><span class="t">自己表現</span></div>
+      <div class="power"><span class="em">🔍</span><span class="t">探究心</span></div>
+      <div class="power"><span class="em">🗣️</span><span class="t">コミュニケーション力</span></div>
+      <div class="power"><span class="em">🌏</span><span class="t">国際感覚</span></div>
+      <div class="power"><span class="em">🇯🇵</span><span class="t">日本を伝える力</span></div>
+    </div>
+  </section>
+
+  <!-- ━━━ 英語が苦手でも大丈夫 ━━━ -->
+  <section class="sec">
+    <div class="ok-card">
+      <p class="big">英語が苦手でも、大丈夫。</p>
+      <p>英語力より大切なのは、<br>
+      <b style="color:var(--ink);">「仲良くなりたい」というきもち。</b><br><br>
+      翻訳アプリに頼る前に、まず自分の声で。<br>
+      その一歩が、世界とつながる第一歩になります。</p>
+    </div>
+  </section>
+
+  <!-- ━━━ 参加対象 ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">FOR EVERYONE</p>
+    <h2 class="sec-title">参加<span class="u">対象</span></h2>
+    <div class="target">
+      <span>小学生</span><span>中学生</span><span>高校生</span>
+      <span>保護者</span><span>大人</span>
+    </div>
+    <p class="target-note">英語レベルは問いません。どなたでも大歓迎です 🌸</p>
+  </section>
+
+  <!-- ━━━ 3つの参加方法（料金） ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">3 PLANS</p>
+    <h2 class="sec-title">3つの<span class="u">参加方法</span></h2>
+    <p class="sec-lead">自分に合ったスタイルで参加しよう！</p>
+
+    <div class="plans">
+      <div class="plan a">
+        <div class="plan-head">
+          <div class="plan-name">親子セット</div>
+          <div class="plan-price">20,000<small>円</small></div>
+        </div>
+        <div class="plan-body">
+          <ul>
+            <li>オンライン会 3回</li>
+            <li>当日プログラム参加</li>
+            <li>名古屋城 入場券（親子分）</li>
+            <li>カレンダー 1冊</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="plan b">
+        <div class="plan-head">
+          <div class="plan-name">単独参加</div>
+          <div class="plan-price">15,000<small>円</small></div>
+        </div>
+        <div class="plan-body">
+          <ul>
+            <li>オンライン会 3回</li>
+            <li>当日プログラム参加</li>
+            <li>名古屋城 入場券（1名分）</li>
+            <li>カレンダー 1冊</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="plan c">
+        <div class="plan-head">
+          <div class="plan-name">当日参加</div>
+          <div class="plan-price">5,000<small>円</small></div>
+        </div>
+        <div class="plan-body">
+          <ul>
+            <li>当日プログラム参加</li>
+            <li>名古屋城 入場券（1名分）</li>
+            <li>カレンダー 1冊</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan-extra">
+      🎁 <b>カレンダーの追加</b>をご希望の方は、<b>1冊 1,500円</b>でご購入いただけます。<br>
+      必要数をお知らせください♪
+    </div>
+
+    <div class="tshirt">
+      <span class="em">👕</span>
+      <span class="tx">
+        <b>ピンクTシャツは自由参加です</b>
+        当日、みんなでピンクを着て一緒に盛り上げたい方は、リンクから各自ご購入ください。着用はもちろん自由です♪
+      </span>
+    </div>
+  </section>
+
+</div>
+
+<!-- ━━━ 締め ━━━ -->
+<div class="closing">
+  <div class="em">🌏 🤝 🇯🇵</div>
+  <p class="msg">世界はもっと、<br>仲良くなれる。</p>
+  <p>
+    世界と話そう。日本を伝えよう。<br>
+    その一歩が、子どもにも大人にも、<br>
+    一生ものの自信と誇りをプレゼントします。<br><br>
+    できたらいいな、やってみたいな。<br>
+    そのきもちから始めて大丈夫です。
+  </p>
+  <p class="sign">TEAM Today Japan</p>
+</div>
+
+<!-- ━━━ フッター ━━━ -->
+<div class="footer">
+  <img src="logo.jpg" alt="Today Japan">
+  <p>© Today Japan株式会社 ／ <a href="https://todayjapan.net">todayjapan.net</a></p>
+</div>
+
+</body>
+</html>
