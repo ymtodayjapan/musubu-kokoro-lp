@@ -323,9 +323,86 @@
   .footer p{font-size:11px;color:rgba(255,253,248,.45);letter-spacing:.06em;}
   .footer a{color:#8fd3f0;text-decoration:none;}
 
+  /* ━━━ コンセプト3ポイント ━━━ */
+  .cpoints{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+  .cpoint{
+    background:#fff;border:2px solid var(--line);border-radius:16px;
+    padding:16px 20px;border-left:6px solid var(--pink);
+  }
+  .cpoint:nth-child(2){border-left-color:var(--sky);}
+  .cpoint:nth-child(3){border-left-color:var(--green);}
+  .cpoint .t{font-size:16px;font-weight:800;margin-bottom:5px;letter-spacing:.02em;}
+  .cpoint .d{font-size:14px;color:var(--ink-soft);line-height:1.85;}
+
+  /* ━━━ 全体スケジュール（タイムライン） ━━━ */
+  .timeline{display:flex;gap:10px;margin:8px 0 24px;}
+  .tl-step{
+    flex:1;border:2px solid var(--line);border-radius:16px;
+    padding:16px 8px;text-align:center;
+  }
+  .tl-step:nth-child(1){background:var(--sky-pale);border-color:#bfe6f7;}
+  .tl-step:nth-child(2){background:var(--pink-pale);border-color:#ffd7de;}
+  .tl-step:nth-child(3){background:var(--green-pale);border-color:#c4ebd5;}
+  .tl-step .em{font-size:26px;display:block;margin-bottom:6px;}
+  .tl-step .season{font-size:11px;font-weight:800;color:var(--ink-soft);margin-bottom:3px;}
+  .tl-step .nm{font-size:13px;font-weight:800;line-height:1.4;}
+
+  /* ━━━ カレンダー教材 ━━━ */
+  .calendar{
+    display:flex;gap:16px;align-items:center;
+    background:var(--yellow-pale);border:2px solid #ffe7a8;
+    border-radius:18px;padding:18px 20px;margin-top:16px;
+  }
+  .calendar .em{font-size:34px;flex-shrink:0;}
+  .calendar .tx{font-size:14px;color:var(--ink-soft);line-height:1.85;}
+  .calendar .tx b{display:block;color:var(--ink);font-size:15px;font-weight:800;margin-bottom:3px;}
+
+  /* ━━━ 先生（メンバー）紹介 ━━━ */
+  .members{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+  .member{
+    display:flex;gap:16px;align-items:flex-start;
+    background:#fff;border:2px solid var(--line);border-radius:18px;padding:18px 20px;
+  }
+  .member .av{
+    flex-shrink:0;width:54px;height:54px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:26px;
+  }
+  .member:nth-child(5n+1) .av{background:var(--pink-pale);}
+  .member:nth-child(5n+2) .av{background:var(--sky-pale);}
+  .member:nth-child(5n+3) .av{background:var(--yellow-pale);}
+  .member:nth-child(5n+4) .av{background:var(--green-pale);}
+  .member:nth-child(5n+5) .av{background:var(--pink-pale);}
+  .member .nm{font-size:16px;font-weight:800;letter-spacing:.02em;}
+  .member .nm span{font-size:12px;font-weight:700;color:var(--sky-deep);margin-left:8px;}
+  .member .cm{font-size:14px;color:var(--ink-soft);line-height:1.8;margin-top:5px;}
+
+  /* ━━━ お申込みについて ━━━ */
+  .apply-card{
+    background:var(--sky-pale);border:2px solid #bfe6f7;
+    border-radius:22px;padding:30px 24px;text-align:center;
+  }
+  .apply-badge{
+    display:inline-block;background:var(--pink);color:#fff;
+    font-weight:800;font-size:13px;border-radius:999px;padding:6px 18px;margin-bottom:16px;
+  }
+  .apply-card .big{
+    font-size:clamp(18px,4.6vw,23px);font-weight:800;color:var(--sky-deep);
+    line-height:1.55;margin-bottom:12px;
+  }
+  .apply-card p{font-size:15px;color:var(--ink-soft);line-height:2;}
+  .oc-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#06C755;color:#fff;font-weight:800;text-decoration:none;
+    border-radius:999px;padding:13px 28px;margin-top:18px;font-size:15px;
+    box-shadow:0 6px 16px rgba(6,199,85,.25);
+  }
+  .oc-note{font-size:12px;color:var(--ink-soft);margin-top:10px;}
+
   @media(max-width:480px){
     .powers{grid-template-columns:repeat(2,1fr);}
     .pillar{max-width:none;flex:1 1 42%;}
+    .tl-step{padding:14px 4px;}
+    .tl-step .nm{font-size:12px;}
   }
 </style>
 </head>
@@ -374,6 +451,21 @@
       英語は目的ではありません。<br>
       <b>世界の人とつながるための、コミュニケーションツール</b>です。
     </p>
+
+    <div class="cpoints">
+      <div class="cpoint">
+        <p class="t">なぜ、始めたのか</p>
+        <p class="d">「英語が話せたらいいな」の一歩を、子どもも大人も安心して踏み出せる場をつくりたくて。2026年、アジア大会で世界が集まる名古屋だからこそ、いま届けたい体験です。</p>
+      </div>
+      <div class="cpoint">
+        <p class="t">名古屋城で、実際に感じたこと</p>
+        <p class="d">先にトライアルで挑戦してみたら、英語力よりも「仲良くなりたい気持ち」で世界とつながれると実感しました。うまく話せなくても、笑顔と勇気で通じ合えたのです。</p>
+      </div>
+      <div class="cpoint">
+        <p class="t">英語教室ではなく、「世界と仲良くなるプロジェクト」</p>
+        <p class="d">これは、英語を習う場ではありません。世界と友達になり、日本を自分の言葉で伝える——その体験を、みんなで楽しむプロジェクトです。</p>
+      </div>
+    </div>
   </section>
 
   <!-- ━━━ こんな方におすすめ ━━━ -->
@@ -395,6 +487,24 @@
     <p class="sec-eyebrow">PROGRAM</p>
     <h2 class="sec-title">プログラム<span class="u">内容</span></h2>
     <p class="sec-lead">オンラインで準備を整え、<br>名古屋城で「本物の世界」と出会います。</p>
+
+    <div class="timeline">
+      <div class="tl-step">
+        <span class="em">💻</span>
+        <p class="season">夏休み</p>
+        <p class="nm">事前オンライン<br>全2回</p>
+      </div>
+      <div class="tl-step">
+        <span class="em">🏯</span>
+        <p class="season">秋ごろ</p>
+        <p class="nm">名古屋城で<br>体験</p>
+      </div>
+      <div class="tl-step">
+        <span class="em">💭</span>
+        <p class="season">体験のあと</p>
+        <p class="nm">振り返り<br>オンライン</p>
+      </div>
+    </div>
 
     <div class="prog">
       <div class="prog-head">
@@ -436,6 +546,14 @@
         <p class="after">翻訳アプリでは味わえない、自分の声で伝える楽しさがあります。</p>
       </div>
     </div>
+
+    <div class="calendar">
+      <span class="em">📅</span>
+      <span class="tx">
+        <b>カレンダー教材つき</b>
+        毎日の暮らしのなかで、世界や日本にふれられるオリジナルカレンダー。体験のあとも、学びと楽しさが続いていきます。
+      </span>
+    </div>
   </section>
 
   <!-- ━━━ 育つ力 ━━━ -->
@@ -472,6 +590,51 @@
       <span>保護者</span><span>大人</span>
     </div>
     <p class="target-note">英語レベルは問いません。どなたでも大歓迎です 🌸</p>
+  </section>
+
+  <!-- ━━━ 先生（メンバー）紹介 ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">OUR TEAM</p>
+    <h2 class="sec-title">この時間を<br class="sp">一緒につくる<span class="u">仲間たち</span></h2>
+    <p class="sec-lead">それぞれの想いを持ち寄って、<br>あたたかい時間をお届けします。</p>
+
+    <div class="members">
+      <div class="member">
+        <span class="av">🌸</span>
+        <div>
+          <p class="nm">美子<span>増田美子・代表</span></p>
+          <p class="cm">世界と仲良くなる体験を、子どもにも大人にも。「日本に生まれてよかった」と思える一歩を一緒に。</p>
+        </div>
+      </div>
+      <div class="member">
+        <span class="av">🌏</span>
+        <div>
+          <p class="nm">ゆみっち</p>
+          <p class="cm">（ひとことメッセージが入ります）</p>
+        </div>
+      </div>
+      <div class="member">
+        <span class="av">✨</span>
+        <div>
+          <p class="nm">トコちゃん</p>
+          <p class="cm">（ひとことメッセージが入ります）</p>
+        </div>
+      </div>
+      <div class="member">
+        <span class="av">🎵</span>
+        <div>
+          <p class="nm">まぁちゃん</p>
+          <p class="cm">（ひとことメッセージが入ります）</p>
+        </div>
+      </div>
+      <div class="member">
+        <span class="av">🤝</span>
+        <div>
+          <p class="nm">ちかちゃん</p>
+          <p class="cm">（ひとことメッセージが入ります）</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ━━━ 3つの参加方法（料金） ━━━ -->
@@ -534,9 +697,27 @@
     <div class="tshirt">
       <span class="em">👕</span>
       <span class="tx">
-        <b>ピンクTシャツは自由参加です</b>
-        当日、みんなでピンクを着て一緒に盛り上げたい方は、リンクから各自ご購入ください。着用はもちろん自由です♪
+        <b>希望される方は、一緒に着ませんか？</b>
+        当日、みんなでピンクのTシャツを着ると、自然と声をかけ合えて一体感も生まれます。購入リンクはZoomのチャットでお送りしますね。着用はもちろん自由です♪
       </span>
+    </div>
+  </section>
+
+  <!-- ━━━ お申込みについて ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">HOW TO JOIN</p>
+    <h2 class="sec-title">お申込み<span class="u">について</span></h2>
+
+    <div class="apply-card">
+      <span class="apply-badge">大切なお知らせ</span>
+      <p class="big">申込開始日は、<br>オープンチャットで発表します ✨</p>
+      <p>
+        今回はその場での募集開始ではありません。<br>
+        オープンチャットで、これからも情報を<br>お届けしていきます。<br>
+        ぜひ、楽しみにお待ちください 😊
+      </p>
+      <a class="oc-btn" href="#" target="_blank" rel="noopener">💬 オープンチャットに参加する</a>
+      <p class="oc-note">※ 参加リンクを設定してください（むすぶトーク🍙TodayJapan）</p>
     </div>
   </section>
 
