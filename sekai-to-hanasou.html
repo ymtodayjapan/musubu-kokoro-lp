@@ -370,27 +370,19 @@
   .calendar .tx b{display:block;color:var(--ink);font-size:15px;font-weight:800;margin-bottom:3px;}
 
   /* ━━━ 先生（メンバー）紹介 ━━━ */
-  .members{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+  .members{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
   .member{
-    display:flex;gap:16px;align-items:center;
-    background:#fff;border:2px solid var(--line);border-radius:18px;padding:18px 20px;
+    background:#fff;border:2px solid var(--line);border-radius:16px;
+    overflow:hidden;text-align:center;padding-bottom:14px;
   }
-  .member .av{
-    flex-shrink:0;width:56px;height:56px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;font-size:26px;
-    overflow:hidden;
+  .member.lead{grid-column:1 / -1;}
+  .member .photo{
+    width:100%;aspect-ratio:2/1;object-fit:cover;object-position:center 24%;
+    display:block;background:var(--sky-pale);
   }
-  .member .av img{
-    width:100%;height:100%;object-fit:cover;display:block;
-  }
-  .member:nth-child(5n+1) .av{background:var(--pink-pale);}
-  .member:nth-child(5n+2) .av{background:var(--sky-pale);}
-  .member:nth-child(5n+3) .av{background:var(--yellow-pale);}
-  .member:nth-child(5n+4) .av{background:var(--green-pale);}
-  .member:nth-child(5n+5) .av{background:var(--pink-pale);}
-  .member .nm{font-size:16px;font-weight:800;letter-spacing:.02em;}
+  .member.lead .photo{aspect-ratio:2.7/1;}
+  .member .nm{font-size:16px;font-weight:800;letter-spacing:.02em;margin-top:10px;}
   .member .nm span{font-size:12px;font-weight:700;color:var(--sky-deep);margin-left:8px;}
-  .member .cm{font-size:14px;color:var(--ink-soft);line-height:1.8;margin-top:5px;}
   .member-link{
     display:inline-block;margin-top:6px;font-size:13px;font-weight:700;
     color:var(--sky-deep);text-decoration:none;
@@ -605,36 +597,26 @@
     <p class="sec-lead">それぞれの想いを持ち寄って、<br>あたたかい時間をお届けします。</p>
 
     <div class="members">
-      <div class="member">
-        <span class="av"><img src="assets/member-yoshiko.jpg" alt="よしこさーん"></span>
-        <div>
-          <p class="nm">よしこさーん<span>増田美子・代表</span></p>
-          <a class="member-link" href="https://todayjapan.net/" target="_blank" rel="noopener">🌐 Today Japan 公式サイト</a>
-        </div>
+      <div class="member lead">
+        <img class="photo" src="assets/member-yoshiko.jpg" alt="よしこさーん">
+        <p class="nm">よしこさーん<span>増田美子・代表</span></p>
+        <a class="member-link" href="https://todayjapan.net/" target="_blank" rel="noopener">🌐 Today Japan 公式サイト</a>
       </div>
       <div class="member">
-        <span class="av"><img src="assets/member-yumi.jpg" alt="ゆみっち"></span>
-        <div>
-          <p class="nm">ゆみっち</p>
-        </div>
+        <img class="photo" src="assets/member-yumi.jpg" alt="ゆみっち">
+        <p class="nm">ゆみっち</p>
       </div>
       <div class="member">
-        <span class="av"><img src="assets/member-toko.jpg" alt="とこちゃん"></span>
-        <div>
-          <p class="nm">とこちゃん</p>
-        </div>
+        <img class="photo" src="assets/member-toko.jpg" alt="とこちゃん">
+        <p class="nm">とこちゃん</p>
       </div>
       <div class="member">
-        <span class="av"><img src="assets/member-maasa.jpg" alt="まーさ"></span>
-        <div>
-          <p class="nm">まーさ</p>
-        </div>
+        <img class="photo" src="assets/member-maasa.jpg" alt="まーさ">
+        <p class="nm">まーさ</p>
       </div>
       <div class="member">
-        <span class="av"><img src="assets/member-chika.jpg" alt="ちかちゃん"></span>
-        <div>
-          <p class="nm">ちかちゃん</p>
-        </div>
+        <img class="photo" src="assets/member-chika.jpg" alt="ちかちゃん">
+        <p class="nm">ちかちゃん</p>
       </div>
     </div>
   </section>
