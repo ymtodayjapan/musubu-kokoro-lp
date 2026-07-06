@@ -455,6 +455,25 @@
     padding:10px 12px;margin-top:8px;font-size:13px;
   }
 
+  /* ━━━ 次回のZoom会 ━━━ */
+  .nextzoom{
+    background:linear-gradient(135deg,#fff5d6,#fdeef1);
+    border:2px solid #ffe0aa;border-radius:22px;
+    padding:28px 24px;text-align:center;
+  }
+  .nz-eyebrow{
+    display:inline-block;background:#fff;color:var(--pink-deep);
+    font-size:13px;font-weight:800;letter-spacing:.04em;
+    padding:6px 16px;border-radius:999px;margin-bottom:16px;
+    box-shadow:0 4px 12px rgba(232,106,134,.15);
+  }
+  .nz-date{
+    font-size:clamp(23px,6vw,32px);font-weight:800;color:var(--ink);
+    letter-spacing:.02em;line-height:1.35;margin-bottom:14px;
+  }
+  .nz-date span{font-size:.62em;}
+  .nz-note{font-size:14px;color:var(--ink-soft);line-height:1.95;}
+
   @media(max-width:480px){
     .powers{grid-template-columns:repeat(2,1fr);}
     .pillar{max-width:none;flex:1 1 42%;}
@@ -778,6 +797,15 @@
           <p><span class="a-badge">A</span>「これがあれば大丈夫！」というテキスト集をこちらでご用意していますので、ご安心ください。ご自身で考えるのもとても素晴らしいので、挑戦するのもいいですね！</p>
         </div>
       </details>
+    </div>
+  </section>
+
+  <!-- ━━━ 次回のZoom会 ━━━ -->
+  <section class="sec">
+    <div class="nextzoom">
+      <span class="nz-eyebrow">📅 次回のZoom会</span>
+      <p class="nz-date">7月13日<span>（月）</span><br>午前 10:00〜</p>
+      <p class="nz-note">ZoomのURL・コードは、オープンチャット<br>「🌏世界と話そう🇯🇵」で後ほど発表します。</p>
     </div>
   </section>
 
