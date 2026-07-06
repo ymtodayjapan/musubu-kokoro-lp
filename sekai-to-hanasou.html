@@ -421,6 +421,40 @@
   }
   .oc-note{font-size:12px;color:var(--ink-soft);margin-top:10px;}
 
+  /* ━━━ よくある質問（Q&A） ━━━ */
+  .faq{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+  .faq-item{
+    background:#fff;border:2px solid var(--line);border-radius:16px;overflow:hidden;
+  }
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:16px 46px 16px 18px;position:relative;
+    font-size:15px;font-weight:800;color:var(--ink);line-height:1.65;
+    display:flex;gap:11px;align-items:flex-start;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .q-badge{
+    flex-shrink:0;background:var(--sky);color:#fff;font-size:13px;font-weight:800;
+    border-radius:8px;padding:2px 9px;line-height:1.5;
+  }
+  .faq-item summary::after{
+    content:"＋";position:absolute;right:16px;top:15px;
+    color:var(--sky);font-weight:800;font-size:19px;
+  }
+  .faq-item[open] summary::after{content:"−";}
+  .faq-a{
+    padding:2px 18px 18px 18px;font-size:14px;color:var(--ink-soft);line-height:1.95;
+  }
+  .faq-a p{margin-bottom:8px;}
+  .faq-a p:last-child{margin-bottom:0;}
+  .faq-a .a-badge{
+    display:inline-block;background:var(--pink);color:#fff;font-size:12px;font-weight:800;
+    border-radius:8px;padding:1px 8px;margin-right:6px;
+  }
+  .faq-a .sub{
+    display:block;background:var(--sky-pale);border-radius:10px;
+    padding:10px 12px;margin-top:8px;font-size:13px;
+  }
+
   @media(max-width:480px){
     .powers{grid-template-columns:repeat(2,1fr);}
     .pillar{max-width:none;flex:1 1 42%;}
@@ -699,6 +733,52 @@
       </span>
     </div>
     <img class="media-photo" src="assets/tshirt-pink.jpg" alt="ピンクTシャツ It's All Good" onerror="this.style.display='none'">
+  </section>
+
+  <!-- ━━━ よくある質問（Q&A） ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">Q &amp; A</p>
+    <h2 class="sec-title">よくある<span class="u">質問</span></h2>
+    <p class="sec-lead">説明会でいただいたご質問をまとめました。</p>
+
+    <div class="faq">
+      <details class="faq-item">
+        <summary><span class="q-badge">Q1</span>オンラインレッスンは、朝の8時半スタートのみですか？</summary>
+        <div class="faq-a">
+          <p><span class="a-badge">A</span>現時点では朝の8時半スタートを予定していますが、ご意見をいただき、夜開催も検討中です。決まり次第ご連絡しますね。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-badge">Q2</span>3歳の子どもがいます。低年齢でも参加できますか？（当日の所要時間も知りたいです）</summary>
+        <div class="faq-a">
+          <p><span class="a-badge">A</span>3歳のお子さんは、お兄さん・お姉さんと同じように活動するのが難しい場面もあるかもしれませんが、このプログラムは「英語って楽しい！」「外国の方と話せた！」という体験を大切にしています。小さいうちから、国境を感じることなく、いろいろな国の方と自然に関われる感覚を育むことも、大切にしたいことのひとつです。親子で一緒に楽しみながらご参加いただけたら嬉しいです！</p>
+          <span class="sub">⏱ 所要時間：集合から解散まで2時間ぐらいを予定しています。暑くなることが予想されるので、適宜休憩を取りながら進めていきますね。</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-badge">Q3</span>サポーターとしての参加は、他とどんな違いがありますか？事前のお手伝いもできますか？</summary>
+        <div class="faq-a">
+          <p><span class="a-badge">A</span>ありがとうございます！サポーターは、子どもたちがスムーズに外国の方へ声をかけられるよう、「英語の学びのためにインタビューさせてください」「ご協力ありがとうございます」など、英語ができる方はぜひ英語でサポートをお願いします。</p>
+          <p>英語は難しいな…という方でも、写真撮影のカメラ係や暑さ対策のサポート、楽しむ子どもたちを全力でほめていただけると嬉しいです。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-badge">Q4</span>オンラインレッスンは、両日とも参加できません。大丈夫ですか？</summary>
+        <div class="faq-a">
+          <p><span class="a-badge">A</span>はい、大丈夫です。オンラインレッスンはアーカイブをお渡しするので、事前にお渡しするテキストと一緒に学んでいただけます。ご安心くださいね。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="q-badge">Q5</span>インタビューの内容は、自分たちで考えてくるんですか？</summary>
+        <div class="faq-a">
+          <p><span class="a-badge">A</span>「これがあれば大丈夫！」というテキスト集をこちらでご用意していますので、ご安心ください。ご自身で考えるのもとても素晴らしいので、挑戦するのもいいですね！</p>
+        </div>
+      </details>
+    </div>
   </section>
 
   <!-- ━━━ お申込みについて ━━━ -->
