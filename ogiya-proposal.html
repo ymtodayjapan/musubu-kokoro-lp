@@ -266,6 +266,140 @@
       color: #1a4d8c;
       font-weight: bold;
     }
+    .goal-box {
+      background: #edf3fa;
+      border-left: 4px solid #1a4d8c;
+      border-radius: 0 6px 6px 0;
+      padding: 14px 20px;
+      margin: 16px 0 8px;
+    }
+    .goal-box .goal-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: #1a4d8c;
+      font-family: sans-serif;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .goal-box p {
+      font-size: 14px;
+      font-family: sans-serif;
+      color: #0f2a4a;
+      margin: 0;
+      font-weight: bold;
+    }
+    .output-box {
+      background: #f5f3ef;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 14px 20px;
+      margin: 8px 0 16px;
+    }
+    .output-box .output-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: #666;
+      font-family: sans-serif;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .output-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .output-box ul li {
+      font-size: 13px;
+      font-family: sans-serif;
+      color: #444;
+      padding: 3px 0 3px 18px;
+      position: relative;
+    }
+    .output-box ul li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: #a8c8e8;
+      font-size: 10px;
+      top: 5px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e0dbd4;
+      border-top: 3px solid #1a4d8c;
+      border-radius: 8px;
+      padding: 20px 22px;
+    }
+    .feature-card .feature-num {
+      font-size: 11px;
+      color: #1a4d8c;
+      font-family: sans-serif;
+      font-weight: bold;
+      letter-spacing: 0.15em;
+      margin-bottom: 6px;
+    }
+    .feature-card h4 {
+      font-size: 15px;
+      color: #0f2a4a;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 13px;
+      color: #555;
+      font-family: sans-serif;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .effect-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+      counter-reset: effect-counter;
+    }
+    .effect-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid #e8e4de;
+      font-family: sans-serif;
+      font-size: 14px;
+      color: #333;
+    }
+    .effect-list li:last-child { border-bottom: none; }
+    .effect-num {
+      width: 28px;
+      height: 28px;
+      background: #1a4d8c;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .closing-box {
+      background: linear-gradient(135deg, #edf3fa, #dce8f5);
+      border: 1px solid #a8c8e8;
+      border-radius: 10px;
+      padding: 36px 40px;
+      text-align: center;
+      margin: 32px 0;
+    }
+    .closing-box p {
+      font-size: 15px;
+      color: #0f2a4a;
+      line-height: 2;
+      margin: 0;
+    }
 
     /* 費用 */
     .price-table {
@@ -558,6 +692,10 @@
         現場責任者が接客改革の意義を理解し、店舗で接客文化を育てる<strong>「旗振り役」</strong>になるための回。
         第1回で責任者の腹落ちがあってこそ、2〜4回目の接客推進担当者の研修が現場に定着します。
       </p>
+      <div class="goal-box">
+        <div class="goal-label">到達目標</div>
+        <p>接客改革の目的を理解し、各店舗に浸透させる旗振り役としての役割を明確にする</p>
+      </div>
       <h4 style="margin-top:20px;color:#0f2a4a;font-size:14px;">主な指導内容</h4>
       <ul class="goal-list">
         <li>新接客方針の確認と「形式的な接客」から「親しみやすい接客」への転換</li>
@@ -566,6 +704,14 @@
         <li>ペップトーク導入：「指摘」ではなく「成長を促す声かけ」</li>
         <li>ワーク：明日からの接客推進アクション設定・店舗メッセージ作成</li>
       </ul>
+      <div class="output-box">
+        <div class="output-label">成果物・持ち帰り</div>
+        <ul>
+          <li>現場責任者としての役割整理</li>
+          <li>接客推進担当者を支えるための声かけポイント</li>
+          <li>各店舗への浸透に向けた初期アクション</li>
+        </ul>
+      </div>
       <div class="tag-list">
         <span class="tag">あり方</span>
         <span class="tag">接客文化</span>
@@ -588,6 +734,10 @@
         接客推進担当者が自分と相手の違いを理解し、店舗のロールモデルとして動ける状態をつくる回。
         コミュニケーションカードを使って楽しく自己理解・他者理解を深めます。
       </p>
+      <div class="goal-box">
+        <div class="goal-label">到達目標</div>
+        <p>自分と相手の違いを理解し、接客・指導における信頼関係づくりの土台をつくる</p>
+      </div>
       <h4 style="margin-top:20px;color:#0f2a4a;font-size:14px;">主な指導内容</h4>
       <ul class="goal-list">
         <li>コミュニケーションカードを活用した自己理解ワーク</li>
@@ -596,6 +746,14 @@
         <li>接客における信頼関係づくり（安心感・親しみやすさ・共感・承認）</li>
         <li>接客推進担当者としての役割認識：店舗の空気をつくる人</li>
       </ul>
+      <div class="output-box">
+        <div class="output-label">成果物・持ち帰り</div>
+        <ul>
+          <li>自分のコミュニケーション特性の理解</li>
+          <li>相手に合わせた関わり方のポイント</li>
+          <li>接客推進担当者としての行動宣言</li>
+        </ul>
+      </div>
       <div class="tag-list">
         <span class="tag">コミュニケーションカード</span>
         <span class="tag">自己理解</span>
@@ -618,14 +776,26 @@
         ペップトークを活用して「言葉の力」を実践に落とし込む回。
         お客様対応だけでなく、スタッフ育成・指導場面での声かけも扱います。
       </p>
+      <div class="goal-box">
+        <div class="goal-label">到達目標</div>
+        <p>ペップトークを活用し、お客様にもスタッフにも元気が伝わる言葉がけを実践できるようにする</p>
+      </div>
       <h4 style="margin-top:20px;color:#0f2a4a;font-size:14px;">主な指導内容</h4>
       <ul class="goal-list">
+        <li>言葉が感情と行動に与える影響</li>
         <li>ペップトークの基本：短く・わかりやすく・前向きに・行動につながる言葉</li>
         <li>NGワードをOKワードへ変換するワーク（「なんでできないの？」→前向きな言葉へ）</li>
-        <li>スタッフ育成への活用：注意・指導の伝え方・承認の言葉・行動を促す声かけ</li>
-        <li>お客様とのコミュニケーション実践（第一声・感謝・クレーム初期対応）</li>
-        <li>ロールプレイ：お客様対応・スタッフへの声かけ・フィードバック</li>
+        <li>やる気を引き出す声かけ・指導と注意を前向きに伝える方法</li>
+        <li>お客様対応における第一声・感謝・安心感の言葉</li>
       </ul>
+      <div class="output-box">
+        <div class="output-label">成果物・持ち帰り</div>
+        <ul>
+          <li>現場で使える声かけ例</li>
+          <li>NGワードからOKワードへの言い換えリスト</li>
+          <li>接客推進担当者用のペップトーク実践メモ</li>
+        </ul>
+      </div>
       <div class="tag-list">
         <span class="tag">ペップトーク</span>
         <span class="tag">言葉の力</span>
@@ -648,14 +818,26 @@
         研修の締めくくりとして、接客を具体的な行動に落とし込み、店舗別アクションプランと「接客推進宣言」を作る回。
         12月のビジョン取組み発表会にもつなげやすい内容です。
       </p>
+      <div class="goal-box">
+        <div class="goal-label">到達目標</div>
+        <p>「笑顔と清潔感で、心からの元気を届ける」接客行動を具体化し、店舗で継続する仕組みをつくる</p>
+      </div>
       <h4 style="margin-top:20px;color:#0f2a4a;font-size:14px;">主な指導内容</h4>
       <ul class="goal-list">
-        <li>「笑顔と清潔感」の具体化：表情・声・姿勢・立ち振る舞い・身だしなみ</li>
-        <li>非言語コミュニケーション（目線・うなずき・距離感・身体の向き）</li>
-        <li>接客ロールプレイ（入店〜案内〜声かけ〜退店〜困りごと対応）</li>
-        <li>店舗別アクションプラン作成：明日からすること・続ける仕組み・振り返り方法</li>
+        <li>「笑顔と清潔感」の具体化・言語化</li>
+        <li>親しみやすさと安心感の接客トレーニング</li>
+        <li>店舗での声かけ設計（入店〜案内〜声かけ〜退店）</li>
+        <li>接客を定着させる育成の仕組みづくり</li>
         <li>成果発表：接客推進宣言・店舗別実践計画の共有</li>
       </ul>
+      <div class="output-box">
+        <div class="output-label">成果物・持ち帰り</div>
+        <ul>
+          <li>店舗別アクションプラン</li>
+          <li>接客推進宣言</li>
+          <li>研修後の継続指導ポイント</li>
+        </ul>
+      </div>
       <div class="tag-list">
         <span class="tag">接客実践</span>
         <span class="tag">笑顔・清潔感</span>
@@ -667,9 +849,87 @@
     </div>
   </section>
 
+  <!-- 本研修の特徴 -->
+  <section>
+    <span class="section-num">04 / FEATURES</span>
+    <h2>本研修の特徴</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-num">FEATURE 01</div>
+        <h4>接客文化の育成</h4>
+        <p>スキル習得にとどまらず、「パラディソらしい接客とは何か」を各現場が自分の言葉で語れるようになることを目指します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">FEATURE 02</div>
+        <h4>コミュニケーションカード活用</h4>
+        <p>自己理解・他者理解のツールとして「コミュニケーションカード」を使用。楽しみながら、職場での関わり方が変わります。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">FEATURE 03</div>
+        <h4>ペップトーク導入</h4>
+        <p>短く・わかりやすく・前向きに・行動につながる「ペップトーク」を接客とスタッフ育成の両場面で活用します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">FEATURE 04</div>
+        <h4>責任者と推進担当者の同方向設計</h4>
+        <p>第1回（責任者）と第2〜4回（推進担当者）を連動させた設計で、上下が同じ方向を向く構造をつくります。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">FEATURE 05</div>
+        <h4>店舗別アクションプラン</h4>
+        <p>研修の最後に「自分の店舗で明日から何をするか」を具体化。持ち帰れる成果物があるから、現場に定着します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 期待できる効果 -->
+  <section>
+    <span class="section-num">05 / EXPECTED EFFECTS</span>
+    <h2>期待できる効果</h2>
+    <ul class="effect-list">
+      <li>
+        <div class="effect-num">1</div>
+        <div>新接客キャッチフレーズ「笑顔と清潔感で、心からの元気を届けよう」が全店舗に浸透する</div>
+      </li>
+      <li>
+        <div class="effect-num">2</div>
+        <div>店長・部長が接客改革の「旗振り役」として機能し、現場をリードできるようになる</div>
+      </li>
+      <li>
+        <div class="effect-num">3</div>
+        <div>接客推進担当者が前向きな声かけを実践し、スタッフ全体のモチベーションが向上する</div>
+      </li>
+      <li>
+        <div class="effect-num">4</div>
+        <div>お客様への親しみやすい接客が増え、「また来たい」と思われる店舗づくりが進む</div>
+      </li>
+      <li>
+        <div class="effect-num">5</div>
+        <div>継続的な指導体制が各店舗に構築され、研修後も接客品質が維持・向上し続ける</div>
+      </li>
+      <li>
+        <div class="effect-num">6</div>
+        <div>自己理解・他者理解が深まり、スタッフ間のコミュニケーションと職場の雰囲気が改善する</div>
+      </li>
+      <li>
+        <div class="effect-num">7</div>
+        <div>「接客は大変なもの」から「接客は楽しいもの」という意識の変化が生まれ、スタッフ定着にもつながる</div>
+      </li>
+    </ul>
+
+    <div class="closing-box">
+      <p>
+        扇屋商事様がこれまで大切にされてきた「接客への本気度」と、<br>
+        今回の新方針「笑顔と清潔感で、心からの元気を届けよう」を重ね合わせながら、<br>
+        <strong>パラディソの接客文化を、一緒につくっていきたいと思っています。</strong><br><br>
+        どうぞよろしくお願いいたします。
+      </p>
+    </div>
+  </section>
+
   <!-- 4. スケジュール -->
   <section>
-    <span class="section-num">04 / SCHEDULE</span>
+    <span class="section-num">06 / SCHEDULE</span>
     <h2>実施スケジュール</h2>
 
     <div class="schedule-flow">
@@ -717,7 +977,7 @@
 
   <!-- 5. 費用 -->
   <section>
-    <span class="section-num">05 / INVESTMENT</span>
+    <span class="section-num">07 / INVESTMENT</span>
     <h2>お見積り（概算）</h2>
 
     <table class="price-table">
@@ -753,7 +1013,7 @@
 
   <!-- 6. 講師プロフィール -->
   <section>
-    <span class="section-num">06 / INSTRUCTOR</span>
+    <span class="section-num">08 / INSTRUCTOR</span>
     <h2>講師プロフィール</h2>
 
     <div class="instructor-wrap">
