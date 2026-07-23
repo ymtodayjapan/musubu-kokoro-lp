@@ -402,6 +402,72 @@
       margin: 0;
     }
 
+    /* 資料ダウンロード */
+    .doc-group { margin: 28px 0; }
+    .doc-group-title {
+      font-size: 15px;
+      color: #0f2a4a;
+      font-weight: bold;
+      margin-bottom: 14px;
+      padding-left: 12px;
+      border-left: 4px solid #1a4d8c;
+    }
+    .doc-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .doc-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #fff;
+      border: 1px solid #e0dbd4;
+      border-radius: 8px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: #0f2a4a;
+      transition: box-shadow .2s, border-color .2s, transform .2s;
+    }
+    .doc-link:hover {
+      border-color: #1a4d8c;
+      box-shadow: 0 4px 14px rgba(26,77,140,0.14);
+      transform: translateY(-2px);
+    }
+    .doc-icon {
+      width: 44px;
+      height: 44px;
+      background: #1a4d8c;
+      color: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: sans-serif;
+      flex-shrink: 0;
+      letter-spacing: 0.05em;
+    }
+    .doc-info { flex: 1; min-width: 0; }
+    .doc-info .doc-name {
+      font-size: 14px;
+      font-weight: bold;
+      font-family: sans-serif;
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+    .doc-info .doc-desc {
+      font-size: 12px;
+      color: #888;
+      font-family: sans-serif;
+    }
+    .doc-arrow {
+      color: #1a4d8c;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
     /* 費用 */
     .price-table {
       width: 100%;
@@ -1037,6 +1103,64 @@
           <span class="tag">自己理解・他者理解</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 9. 関連書類 -->
+  <section>
+    <span class="section-num">09 / DOCUMENTS</span>
+    <h2>関連書類ダウンロード</h2>
+    <p style="font-size:14px;font-family:sans-serif;color:#555;">
+      人材開発支援助成金の申請にあたって必要となる書類と、各回のタイムスケジュールをご用意しました。
+      下記より、それぞれのWordファイル（.docx）をダウンロード・ご確認いただけます。
+    </p>
+
+    <div class="doc-group">
+      <div class="doc-group-title">助成金 申請関連書類</div>
+      <div class="doc-list">
+        <a class="doc-link" href="assets/ogiya-docs/%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E5%8F%97%E8%AC%9B%E7%94%B3%E8%BE%BC%E6%9B%B8_%E6%89%87%E5%B1%8B%E5%95%86%E4%BA%8B%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.docx" download>
+          <div class="doc-icon">WORD</div>
+          <div class="doc-info">
+            <div class="doc-name">教育訓練 受講申込書</div>
+            <div class="doc-desc">接客推進担当者育成研修（全3回）</div>
+          </div>
+          <div class="doc-arrow">↓</div>
+        </a>
+        <a class="doc-link" href="assets/ogiya-docs/%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E5%AE%9F%E6%96%BD%E5%A5%91%E7%B4%84%E6%9B%B8_%E6%89%87%E5%B1%8B%E5%95%86%E4%BA%8B%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.docx" download>
+          <div class="doc-icon">WORD</div>
+          <div class="doc-info">
+            <div class="doc-name">教育訓練 実施契約書</div>
+            <div class="doc-desc">Today Japan × 扇屋商事株式会社</div>
+          </div>
+          <div class="doc-arrow">↓</div>
+        </a>
+        <a class="doc-link" href="assets/ogiya-docs/%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E5%8F%97%E8%AC%9B%E6%A1%88%E5%86%85_%E6%8E%A5%E5%AE%A2%E6%8E%A8%E9%80%B2%E6%8B%85%E5%BD%93%E8%80%85%E8%82%B2%E6%88%90%E7%A0%94%E4%BF%AE.docx" download>
+          <div class="doc-icon">WORD</div>
+          <div class="doc-info">
+            <div class="doc-name">教育訓練 受講案内</div>
+            <div class="doc-desc">接客推進担当者育成研修のご案内</div>
+          </div>
+          <div class="doc-arrow">↓</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="doc-group">
+      <div class="doc-group-title">タイムスケジュール表</div>
+      <div class="doc-list">
+        <a class="doc-link" href="assets/ogiya-docs/%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB_%E6%89%87%E5%B1%8B%E5%95%86%E4%BA%8B%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE.docx" download>
+          <div class="doc-icon">WORD</div>
+          <div class="doc-info">
+            <div class="doc-name">教育訓練 タイムスケジュール</div>
+            <div class="doc-desc">第1回〜第3回 各回の時間割（助成金添付資料）</div>
+          </div>
+          <div class="doc-arrow">↓</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="note-box">
+      ※ ファイル形式はいずれもWord（.docx）です。スマートフォンでは、いったんダウンロードしてからご覧ください。
     </div>
   </section>
 
