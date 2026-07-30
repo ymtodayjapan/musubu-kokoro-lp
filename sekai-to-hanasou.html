@@ -487,6 +487,29 @@
   .nz-date span{font-size:.62em;}
   .nz-note{font-size:14px;color:var(--ink-soft);line-height:1.95;}
 
+  /* ━━━ カウントダウン ━━━ */
+  .countdown{
+    background:linear-gradient(135deg,#f5849b,#f7a0b3);
+    border-radius:22px;padding:26px 20px;text-align:center;
+    box-shadow:0 10px 26px rgba(232,106,134,.22);
+  }
+  .cd-label{color:#fff;font-size:15px;font-weight:800;letter-spacing:.02em;line-height:1.55;margin-bottom:18px;}
+  .cd-timer{display:flex;justify-content:center;gap:8px;}
+  .cd-unit{
+    background:#fff;border-radius:14px;padding:12px 4px;flex:1;max-width:78px;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+  }
+  .cd-num{
+    display:block;font-size:clamp(26px,7.5vw,38px);font-weight:800;color:var(--pink-deep);
+    line-height:1.05;font-variant-numeric:tabular-nums;
+  }
+  .cd-cap{display:block;font-size:11px;font-weight:700;color:var(--ink-soft);margin-top:5px;}
+  .cd-deadline{color:#fff;font-size:14px;font-weight:800;margin-top:16px;letter-spacing:.03em;}
+  .cd-ended-msg{display:none;color:#fff;font-size:15px;font-weight:800;margin-top:14px;}
+  .countdown.ended .cd-timer{opacity:.45;}
+  .countdown.ended .cd-deadline{display:none;}
+  .countdown.ended .cd-ended-msg{display:block;}
+
   @media(max-width:480px){
     .powers{grid-template-columns:repeat(2,1fr);}
     .pillar{max-width:none;flex:1 1 42%;}
@@ -697,6 +720,21 @@
     </div>
   </section>
 
+  <!-- ━━━ カウントダウン ━━━ -->
+  <section class="sec">
+    <div class="countdown" id="countdown">
+      <p class="cd-label">🔥 親子セット・単独参加<br>お申込み締め切りまで</p>
+      <div class="cd-timer">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-cap">日</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-cap">時間</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-cap">分</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-cap">秒</span></div>
+      </div>
+      <p class="cd-deadline">2026年 8月5日（水）12:00 まで</p>
+      <p class="cd-ended-msg">お申込みを締め切りました。ありがとうございました！</p>
+    </div>
+  </section>
+
   <!-- ━━━ 3つの参加方法（料金） ━━━ -->
   <section class="sec">
     <p class="sec-eyebrow">3 PLANS</p>
@@ -877,6 +915,26 @@
   <img src="logo.jpg" alt="Today Japan">
   <p>© Today Japan株式会社 ／ <a href="https://todayjapan.net">todayjapan.net</a></p>
 </div>
+
+<script>
+(function(){
+  var target = new Date('2026-08-05T12:00:00+09:00').getTime();
+  var elD=document.getElementById('cd-days'), elH=document.getElementById('cd-hours'),
+      elM=document.getElementById('cd-mins'), elS=document.getElementById('cd-secs'),
+      box=document.getElementById('countdown');
+  if(!elD) return;
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var diff = target - Date.now();
+    if(diff<=0){ box.classList.add('ended'); elD.textContent='0'; elH.textContent='00'; elM.textContent='00'; elS.textContent='00'; return; }
+    elD.textContent = Math.floor(diff/86400000);
+    elH.textContent = pad(Math.floor(diff%86400000/3600000));
+    elM.textContent = pad(Math.floor(diff%3600000/60000));
+    elS.textContent = pad(Math.floor(diff%60000/1000));
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
 
 </body>
 </html>
