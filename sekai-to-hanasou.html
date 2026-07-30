@@ -98,6 +98,25 @@
     margin-top:-2px;
   }
 
+  /* トップのカウントダウン枠 */
+  .cd-top{max-width:720px;margin:0 auto;padding:22px 22px 8px;}
+
+  /* ヒーロー内の小さいブランド表示（キャッチの下） */
+  .hero-brand{
+    display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px;
+  }
+  .hero-logo-sm{
+    background:#fff;border-radius:10px;padding:7px 16px;
+    box-shadow:0 4px 14px rgba(43,143,198,.18);
+  }
+  .hero-logo-sm img{height:24px;width:auto;display:block;}
+  .hero-eyebrow-sm{
+    display:inline-block;background:#fff;color:var(--sky-deep);
+    font-size:11px;font-weight:700;letter-spacing:.12em;
+    padding:5px 15px;border-radius:999px;
+    box-shadow:0 4px 12px rgba(43,143,198,.15);
+  }
+
   /* ━━━ 見出し共通 ━━━ */
   .sec{padding:52px 0 8px;}
   .sec-eyebrow{
@@ -520,13 +539,30 @@
 </head>
 <body>
 
+<!-- ━━━ カウントダウン（トップ） ━━━ -->
+<div class="cd-top">
+  <div class="countdown" id="countdown">
+    <p class="cd-label">🔥 親子セット・単独参加<br>お申込み締め切りまで</p>
+    <div class="cd-timer">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-cap">日</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-cap">時間</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-cap">分</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-cap">秒</span></div>
+    </div>
+    <p class="cd-deadline">2026年 8月5日（水）12:00 まで</p>
+    <p class="cd-ended-msg">お申込みを締め切りました。ありがとうございました！</p>
+  </div>
+</div>
+
 <!-- ━━━ HERO ━━━ -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-logo"><img src="logo.jpg" alt="Today Japan ロゴ"></div>
-    <div class="hero-eyebrow">外国人インタビュー体験プログラム</div>
     <h1 class="hero-title">世界と話そう 🌏<br>日本を伝えよう 🇯🇵</h1>
     <span class="hero-catch">世界はもっと仲良くなれる。</span>
+    <div class="hero-brand">
+      <div class="hero-logo-sm"><img src="logo.jpg" alt="Today Japan ロゴ"></div>
+      <div class="hero-eyebrow-sm">外国人インタビュー体験プログラム</div>
+    </div>
   </div>
 </div>
 <img class="hero-photo" src="assets/nagoya-scene.jpg" alt="名古屋城の前で、世界の人と話す様子" onerror="this.style.display='none'">
@@ -717,21 +753,6 @@
         <img class="photo" src="assets/member-chika.jpg" alt="ちかちゃん">
         <p class="nm">ちかちゃん</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ━━━ カウントダウン ━━━ -->
-  <section class="sec">
-    <div class="countdown" id="countdown">
-      <p class="cd-label">🔥 親子セット・単独参加<br>お申込み締め切りまで</p>
-      <div class="cd-timer">
-        <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-cap">日</span></div>
-        <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-cap">時間</span></div>
-        <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-cap">分</span></div>
-        <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-cap">秒</span></div>
-      </div>
-      <p class="cd-deadline">2026年 8月5日（水）12:00 まで</p>
-      <p class="cd-ended-msg">お申込みを締め切りました。ありがとうございました！</p>
     </div>
   </section>
 
