@@ -519,10 +519,19 @@
 
   /* ━━━ カウントダウン ━━━ */
   .countdown{
+    display:block;text-decoration:none;cursor:pointer;
     background:linear-gradient(135deg,#f5849b,#f7a0b3);
     border-radius:22px;padding:26px 20px;text-align:center;
     box-shadow:0 10px 26px rgba(232,106,134,.22);
+    transition:transform .15s ease, box-shadow .15s ease;
   }
+  .countdown:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(232,106,134,.32);}
+  .cd-cta{
+    display:inline-block;background:#fff;color:var(--pink-deep);
+    font-weight:800;font-size:14px;border-radius:999px;padding:10px 24px;margin-top:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+  }
+  .countdown.ended .cd-cta{display:none;}
   .cd-label{color:#fff;font-size:15px;font-weight:800;letter-spacing:.02em;line-height:1.55;margin-bottom:18px;}
   .cd-timer{display:flex;justify-content:center;gap:8px;}
   .cd-unit{
@@ -552,7 +561,7 @@
 
 <!-- ━━━ カウントダウン（トップ） ━━━ -->
 <div class="cd-top">
-  <div class="countdown" id="countdown">
+  <a class="countdown" id="countdown" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform" target="_blank" rel="noopener">
     <p class="cd-label">🔥 英語レッスン付き 親子セット・単独参加<br>お申込み締め切りまで</p>
     <div class="cd-timer">
       <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-cap">日</span></div>
@@ -561,8 +570,9 @@
       <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-cap">秒</span></div>
     </div>
     <p class="cd-deadline">2026年 8月5日（水）12:00 まで</p>
+    <p class="cd-cta">👉 タップして申し込む</p>
     <p class="cd-ended-msg">お申込みを締め切りました。ありがとうございました！</p>
-  </div>
+  </a>
 </div>
 
 <!-- ━━━ HERO ━━━ -->
