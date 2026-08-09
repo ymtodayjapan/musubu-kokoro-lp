@@ -336,6 +336,22 @@
   .plan.b .plan-apply{color:var(--sky-deep);border:2px solid #3fa9e0;}
   .plan.c .plan-apply{color:var(--green-deep);border:2px solid #68c69a;}
 
+  .plan-status{
+    display:block;text-align:center;font-size:12px;font-weight:800;
+    padding:6px 0;letter-spacing:.08em;
+  }
+  .plan-status.open{background:#eaf7f0;color:var(--green-deep);}
+  .plan-status.closed{background:#efece8;color:#9a938c;}
+  .plan.closed{opacity:.7;}
+  .plan.closed .plan-head{filter:grayscale(.6);}
+  .plan-apply.disabled{
+    background:#e7e3df !important;color:#9a938c !important;border:2px solid #d9d4ce !important;
+    box-shadow:none !important;pointer-events:none;
+  }
+  .plan-note{
+    font-size:12px;color:var(--ink-soft);text-align:center;line-height:1.65;
+    margin:2px 0 12px;
+  }
   .plan-extra{
     background:var(--yellow-pale);border-radius:16px;
     padding:16px 20px;margin-top:16px;
@@ -603,9 +619,9 @@
 <body>
 
 <!-- ━━━ ヘッダー急募バナー ━━━ -->
-<a class="top-banner" href="#private">
-  <span class="tb-tag">急募</span>
-  プライベートレッスン参加者募集中
+<a class="top-banner" href="#plans">
+  <span class="tb-tag">受付中</span>
+  今からでも参加OK！全プラン＆プライベートレッスン
   <span class="tb-arrow">詳細はこちら ▶</span>
 </a>
 
@@ -829,15 +845,16 @@
   </section>
 
   <!-- ━━━ 3つの参加方法（料金） ━━━ -->
-  <section class="sec">
+  <section class="sec" id="plans">
     <p class="sec-eyebrow">3 PLANS</p>
     <h2 class="sec-title">3つの<span class="u">参加方法</span></h2>
-    <p class="sec-lead">自分に合ったスタイルで参加しよう！</p>
+    <p class="sec-lead">自分に合ったスタイルで参加しよう！<br><b style="color:var(--pink-deep)">締め切り後も、8月20日まで今からご参加いただけます 🌸</b></p>
 
     <img class="media-photo" src="assets/plans-hikaku.png" alt="選べる！3つの参加方法 比較表" onerror="this.style.display='none'">
 
     <div class="plans">
       <div class="plan a">
+        <div class="plan-status open">受付中</div>
         <div class="plan-head">
           <div class="plan-name">親子セット</div>
           <div class="plan-price">20,000<small>円</small></div>
@@ -850,11 +867,13 @@
             <li>名古屋城 入場券（親子分）</li>
             <li>カレンダー 1冊</li>
           </ul>
+          <p class="plan-note">今からでもOK！1回目のオンラインはアーカイブでキャッチアップ、2回目（8/20）のレッスンにご参加いただけます（8/20まで）。</p>
           <a class="plan-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform?usp=pp_url&amp;entry.866760440=%E8%A6%AA%E5%AD%90%E3%82%BB%E3%83%83%E3%83%88%EF%BC%8820,000%E5%86%86%EF%BC%89" target="_blank" rel="noopener">🌸 親子セットで申し込む</a>
         </div>
       </div>
 
       <div class="plan b">
+        <div class="plan-status open">受付中</div>
         <div class="plan-head">
           <div class="plan-name">単独参加</div>
           <div class="plan-price">15,000<small>円</small></div>
@@ -867,11 +886,13 @@
             <li>名古屋城 入場券（1名分）</li>
             <li>カレンダー 1冊</li>
           </ul>
+          <p class="plan-note">今からでもOK！1回目のオンラインはアーカイブでキャッチアップ、2回目（8/20）のレッスンにご参加いただけます（8/20まで）。</p>
           <a class="plan-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform?usp=pp_url&amp;entry.866760440=%E5%8D%98%E7%8B%AC%E5%8F%82%E5%8A%A0%EF%BC%8815,000%E5%86%86%EF%BC%89" target="_blank" rel="noopener">🌊 単独参加で申し込む</a>
         </div>
       </div>
 
       <div class="plan c">
+        <div class="plan-status open">受付中</div>
         <div class="plan-head">
           <div class="plan-name">当日参加</div>
           <div class="plan-price">5,000<small>円</small></div>
@@ -882,6 +903,7 @@
             <li>名古屋城 入場券（1名分）</li>
             <li>カレンダー 1冊</li>
           </ul>
+          <p class="plan-note">オンライン準備なしで、名古屋城の当日だけ気軽に参加OK！（9/6・12:30 集合）</p>
           <a class="plan-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform?usp=pp_url&amp;entry.866760440=%E5%BD%93%E6%97%A5%E5%8F%82%E5%8A%A0%EF%BC%885,000%E5%86%86%EF%BC%89" target="_blank" rel="noopener">🌱 当日参加で申し込む</a>
         </div>
       </div>
