@@ -550,6 +550,33 @@
   .countdown.ended .cd-deadline{display:none;}
   .countdown.ended .cd-ended-msg{display:block;}
 
+  /* ━━━ プライベート個人レッスン ━━━ */
+  .private-card{
+    background:linear-gradient(135deg,#fff2f5,#eefaf3);
+    border:2px solid #ffd7de;border-radius:22px;padding:26px 22px;text-align:center;
+  }
+  .pv-price{margin-bottom:18px;}
+  .pv-price-num{font-size:clamp(32px,9vw,44px);font-weight:800;color:var(--pink-deep);letter-spacing:.02em;}
+  .pv-price-yen{font-size:18px;font-weight:800;color:var(--pink-deep);margin-left:2px;}
+  .pv-price-tax{font-size:13px;color:var(--ink-soft);margin-left:4px;}
+  .pv-list{list-style:none;display:flex;flex-direction:column;gap:9px;max-width:380px;margin:0 auto 20px;text-align:left;}
+  .pv-list li{position:relative;padding-left:26px;font-size:15px;font-weight:600;line-height:1.6;}
+  .pv-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--pink-deep);font-weight:800;}
+  .pv-teacher{display:flex;gap:14px;align-items:center;text-align:left;background:#fff;border-radius:16px;padding:14px 16px;margin-bottom:18px;}
+  .pv-teacher img{width:84px;height:84px;border-radius:14px;object-fit:cover;object-position:center 28%;flex-shrink:0;}
+  .pv-teacher-name{font-size:15px;font-weight:800;margin-bottom:5px;}
+  .pv-teacher-name span{font-size:12px;font-weight:700;color:var(--pink-deep);margin-left:8px;}
+  .pv-teacher-bio{font-size:13px;color:var(--ink-soft);line-height:1.8;}
+  .pv-schedule{background:var(--sky-pale);border-radius:14px;padding:14px 16px;margin-bottom:20px;text-align:left;}
+  .pv-sched-label{font-size:13px;font-weight:800;color:var(--sky-deep);margin-bottom:6px;}
+  .pv-sched-days{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .pv-sched-note{font-size:13px;color:var(--ink-soft);line-height:1.8;}
+  .pv-apply{
+    display:inline-block;background:var(--pink);color:#fff;font-weight:800;text-decoration:none;
+    border-radius:999px;padding:15px 32px;font-size:16px;box-shadow:0 8px 20px rgba(232,106,134,.28);
+  }
+  .pv-apply:hover{opacity:.92;}
+
   @media(max-width:480px){
     .powers{grid-template-columns:repeat(2,1fr);}
     .pillar{max-width:none;flex:1 1 42%;}
@@ -851,6 +878,39 @@
       </span>
     </div>
     <a href="https://m.shein.com/jp/DrmWander-Women-s-T-Shirt-Casual-Street-Style-Graphic-Short-Sleeve-T-Shirt-Cute-Summer-Top-p-400609623.html?mallCode=1" target="_blank" rel="noopener"><img class="media-photo" src="assets/tshirt-pink.jpg" alt="ピンクTシャツ It's All Good（タップで購入ページへ）" onerror="this.style.display='none'"></a>
+  </section>
+
+  <!-- ━━━ プライベート個人レッスン ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">PRIVATE LESSON</p>
+    <h2 class="sec-title">プライベート<span class="u">個人レッスン</span></h2>
+    <p class="sec-lead">あなたのペースで学べる、60分のマンツーマン。<br>今からでもご参加いただけます 🌸</p>
+
+    <div class="private-card">
+      <div class="pv-price"><span class="pv-price-num">10,000</span><span class="pv-price-yen">円</span><span class="pv-price-tax">（税込）</span></div>
+
+      <ul class="pv-list">
+        <li>60分 個別オンラインレッスン（1回）</li>
+        <li>当日プログラム参加（名古屋城・9月6日）</li>
+        <li>テキスト集付き</li>
+      </ul>
+
+      <div class="pv-teacher">
+        <img src="assets/member-chika.jpg" alt="CHIKAKO先生">
+        <div>
+          <p class="pv-teacher-name">講師：CHIKAKO<span>ちかちゃん</span></p>
+          <p class="pv-teacher-bio">元ノースウエストエアライン勤務／英会話講師歴7年／通訳・翻訳業。国際結婚の経験から、「正しくよりも、楽しく！」伝わる英語を大切にしたレッスンをお届けします。</p>
+        </div>
+      </div>
+
+      <div class="pv-schedule">
+        <p class="pv-sched-label">🗓 オンラインレッスン（8月・60分／1回）</p>
+        <p class="pv-sched-days">8/13（木）・8/17（月）・8/19（水）・8/23（土）</p>
+        <p class="pv-sched-note">各日、朝・昼・夜などの時間帯からお選びいただけます（お申し込みフォームで選択）。ご都合が合わない場合は、希望日をご記入ください。</p>
+      </div>
+
+      <a class="pv-apply" href="https://forms.gle/8KovkyiJAkEGdFJJ8" target="_blank" rel="noopener">🌸 プライベートレッスンで申し込む</a>
+    </div>
   </section>
 
   <!-- ━━━ よくある質問（Q&A） ━━━ -->
