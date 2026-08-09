@@ -118,6 +118,21 @@
     box-shadow:0 4px 12px rgba(43,143,198,.15);
   }
 
+  /* ━━━ ヘッダー急募バナー ━━━ */
+  .top-banner{
+    display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+    background:linear-gradient(90deg,#e86a86,#f7a0b3);
+    color:#fff;text-decoration:none;font-weight:800;
+    padding:12px 18px;font-size:15px;text-align:center;letter-spacing:.02em;
+    line-height:1.4;
+  }
+  .top-banner:hover{filter:brightness(1.04);}
+  .tb-tag{
+    background:#fff;color:var(--pink-deep);font-size:12px;font-weight:800;
+    border-radius:999px;padding:3px 12px;flex-shrink:0;
+  }
+  .tb-arrow{font-size:13px;text-decoration:underline;text-underline-offset:2px;}
+
   /* ━━━ 見出し共通 ━━━ */
   .sec{padding:52px 0 8px;}
   .sec-eyebrow{
@@ -587,6 +602,13 @@
 </head>
 <body>
 
+<!-- ━━━ ヘッダー急募バナー ━━━ -->
+<a class="top-banner" href="#private">
+  <span class="tb-tag">急募</span>
+  プライベートレッスン参加者募集中
+  <span class="tb-arrow">詳細はこちら ▶</span>
+</a>
+
 <!-- ━━━ カウントダウン（トップ） ━━━ -->
 <div class="cd-top">
   <a class="countdown" id="countdown" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform" target="_blank" rel="noopener">
@@ -881,7 +903,7 @@
   </section>
 
   <!-- ━━━ プライベート個人レッスン ━━━ -->
-  <section class="sec">
+  <section class="sec" id="private">
     <p class="sec-eyebrow">PRIVATE LESSON</p>
     <h2 class="sec-title">プライベート<span class="u">個人レッスン</span></h2>
     <p class="sec-lead">あなたのペースで学べる、60分のマンツーマン。<br>今からでもご参加いただけます 🌸</p>
