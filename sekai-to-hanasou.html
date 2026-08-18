@@ -98,10 +98,6 @@
     margin-top:-2px;
   }
 
-  /* トップのカウントダウン枠 */
-  /* 締め切り後、一旦非表示にしています（再表示するには下の display:none を消してください） */
-  .cd-top{max-width:720px;margin:0 auto;padding:22px 22px 8px;display:none;}
-
   /* ヒーロー内の小さいブランド表示（キャッチの下） */
   .hero-brand{
     display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px;
@@ -118,20 +114,52 @@
     box-shadow:0 4px 12px rgba(43,143,198,.15);
   }
 
-  /* ━━━ ヘッダー急募バナー ━━━ */
-  .top-banner{
-    display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
-    background:linear-gradient(90deg,#e86a86,#f7a0b3);
-    color:#fff;text-decoration:none;font-weight:800;
-    padding:12px 18px;font-size:15px;text-align:center;letter-spacing:.02em;
-    line-height:1.4;
+  /* ━━━ 募集ヘッダー ━━━ */
+  .recruit-header{
+    background:linear-gradient(135deg,#e86a86,#f7a0b3);
+    color:#fff;text-align:center;padding:22px 20px 26px;
   }
-  .top-banner:hover{filter:brightness(1.04);}
-  .tb-tag{
-    background:#fff;color:var(--pink-deep);font-size:12px;font-weight:800;
-    border-radius:999px;padding:3px 12px;flex-shrink:0;
+  .rh-badge{
+    display:inline-block;background:#fff;color:var(--pink-deep);
+    font-size:13px;font-weight:800;letter-spacing:.12em;
+    padding:6px 20px;border-radius:999px;margin-bottom:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
   }
-  .tb-arrow{font-size:13px;text-decoration:underline;text-underline-offset:2px;}
+  .rh-title{
+    font-size:clamp(27px,7.6vw,42px);font-weight:800;letter-spacing:.04em;
+    line-height:1.2;margin-bottom:12px;text-shadow:0 2px 10px rgba(180,40,70,.28);
+  }
+  .rh-msg{
+    font-size:clamp(15px,4vw,19px);font-weight:800;line-height:1.6;margin-bottom:20px;
+  }
+  .rh-cta{
+    display:inline-block;background:#fff;color:var(--pink-deep);
+    font-size:clamp(15px,4.2vw,18px);font-weight:800;text-decoration:none;
+    padding:15px 32px;border-radius:999px;letter-spacing:.02em;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);transition:transform .15s;
+  }
+  .rh-cta:active{transform:scale(.97);}
+
+  /* ━━━ 募集チラシ ━━━ */
+  .flyer-wrap{max-width:860px;margin:0 auto;padding:26px 22px 8px;text-align:center;}
+  .flyer-link{
+    display:block;border-radius:20px;overflow:hidden;
+    box-shadow:0 12px 32px rgba(58,54,50,.16);
+  }
+  .flyer-img{
+    display:block;width:100%;height:auto;object-fit:contain;border-radius:20px;
+  }
+  .flyer-cta-text{
+    font-size:clamp(15px,4vw,18px);font-weight:800;color:var(--pink-deep);
+    line-height:1.7;margin:22px auto 14px;max-width:560px;
+  }
+  .flyer-cta-btn{
+    display:inline-block;background:linear-gradient(135deg,#e86a86,#f7a0b3);
+    color:#fff;font-size:15px;font-weight:800;text-decoration:none;
+    padding:15px 32px;border-radius:999px;letter-spacing:.02em;
+    box-shadow:0 8px 20px rgba(232,106,134,.3);transition:transform .15s;
+  }
+  .flyer-cta-btn:active{transform:scale(.97);}
 
   /* ━━━ 見出し共通 ━━━ */
   .sec{padding:52px 0 8px;}
@@ -297,6 +325,7 @@
     display:flex;flex-direction:column;gap:16px;margin-top:24px;
   }
   .plan{
+    position:relative;
     border-radius:22px;overflow:hidden;
     border:2px solid var(--line);background:#fff;
   }
@@ -342,15 +371,51 @@
   }
   .plan-status.open{background:#eaf7f0;color:var(--green-deep);}
   .plan-status.closed{background:#efece8;color:#9a938c;}
-  .plan.closed{opacity:.7;}
-  .plan.closed .plan-head{filter:grayscale(.6);}
+  .plan.closed .plan-head{filter:grayscale(.85);}
+  .plan.closed .plan-body{filter:grayscale(.55);opacity:.9;}
+
+  /* 申し込み終了スタンプ（ハンコ） */
+  .plan-stamp{
+    position:absolute;top:38px;right:10px;z-index:4;
+    color:#c8102e;border:3px solid #c8102e;border-radius:10px;
+    font-size:14px;font-weight:800;letter-spacing:.08em;padding:5px 11px;
+    transform:rotate(-8deg);background:rgba(255,255,255,.62);
+    box-shadow:0 1px 0 rgba(200,16,46,.18);pointer-events:none;white-space:nowrap;
+  }
+  /* 受付終了カードの「申し込みは終了しました」表示 */
+  .plan-ended{
+    display:block;text-align:center;margin-top:16px;
+    background:#efece8;color:#9a938c;border:2px solid #e0dbd5;
+    border-radius:999px;font-size:14px;font-weight:800;padding:12px 10px;
+  }
+
+  /* 現在募集中カード（2列）＆受付終了カード（2列） */
+  .plans-open{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+  .plans-closed{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;}
+  .closed-label{
+    text-align:center;font-size:13px;font-weight:800;color:var(--ink-soft);
+    letter-spacing:.08em;margin:36px 0 0;
+  }
+  @media(max-width:560px){
+    .plans-open,.plans-closed{grid-template-columns:1fr;}
+  }
+
+  /* ━━━ 募集案内文 ━━━ */
+  .recruit-copy{
+    background:var(--pink-pale);border:2px solid #ffd7de;border-radius:22px;
+    padding:30px 26px;margin-top:6px;
+  }
+  .recruit-copy h3{
+    font-size:clamp(21px,5.4vw,27px);font-weight:800;color:var(--pink-deep);
+    text-align:center;margin-bottom:20px;letter-spacing:.06em;
+  }
+  .recruit-copy p{font-size:15px;color:var(--ink-soft);line-height:2;margin-bottom:14px;}
+  .recruit-copy p:last-child{margin-bottom:0;}
+  .recruit-copy strong{color:var(--ink);font-weight:800;}
+  .recruit-copy .price{color:var(--pink-deep);font-weight:800;}
   .plan-apply.disabled{
     background:#e7e3df !important;color:#9a938c !important;border:2px solid #d9d4ce !important;
     box-shadow:none !important;pointer-events:none;
-  }
-  .plan-note{
-    font-size:12px;color:var(--ink-soft);text-align:center;line-height:1.65;
-    margin:2px 0 12px;
   }
   .plan-extra{
     background:var(--yellow-pale);border-radius:16px;
@@ -549,38 +614,6 @@
   .nz-date span{font-size:.62em;}
   .nz-note{font-size:14px;color:var(--ink-soft);line-height:1.95;}
 
-  /* ━━━ カウントダウン ━━━ */
-  .countdown{
-    display:block;text-decoration:none;cursor:pointer;
-    background:linear-gradient(135deg,#f5849b,#f7a0b3);
-    border-radius:22px;padding:26px 20px;text-align:center;
-    box-shadow:0 10px 26px rgba(232,106,134,.22);
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .countdown:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(232,106,134,.32);}
-  .cd-cta{
-    display:inline-block;background:#fff;color:var(--pink-deep);
-    font-weight:800;font-size:14px;border-radius:999px;padding:10px 24px;margin-top:16px;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-  }
-  .countdown.ended .cd-cta{display:none;}
-  .cd-label{color:#fff;font-size:15px;font-weight:800;letter-spacing:.02em;line-height:1.55;margin-bottom:18px;}
-  .cd-timer{display:flex;justify-content:center;gap:8px;}
-  .cd-unit{
-    background:#fff;border-radius:14px;padding:12px 4px;flex:1;max-width:78px;
-    box-shadow:0 4px 10px rgba(0,0,0,.08);
-  }
-  .cd-num{
-    display:block;font-size:clamp(26px,7.5vw,38px);font-weight:800;color:var(--pink-deep);
-    line-height:1.05;font-variant-numeric:tabular-nums;
-  }
-  .cd-cap{display:block;font-size:11px;font-weight:700;color:var(--ink-soft);margin-top:5px;}
-  .cd-deadline{color:#fff;font-size:14px;font-weight:800;margin-top:16px;letter-spacing:.03em;}
-  .cd-ended-msg{display:none;color:#fff;font-size:15px;font-weight:800;margin-top:14px;}
-  .countdown.ended .cd-timer{opacity:.45;}
-  .countdown.ended .cd-deadline{display:none;}
-  .countdown.ended .cd-ended-msg{display:block;}
-
   /* ━━━ プライベート個人レッスン ━━━ */
   .private-card{
     background:linear-gradient(135deg,#fff2f5,#eefaf3);
@@ -618,27 +651,24 @@
 </head>
 <body>
 
-<!-- ━━━ ヘッダー急募バナー ━━━ -->
-<a class="top-banner" href="#plans">
-  <span class="tb-tag">受付中</span>
-  今からでも参加OK！全プラン＆プライベートレッスン
-  <span class="tb-arrow">詳細はこちら ▶</span>
-</a>
+<!-- ━━━ 募集ヘッダー ━━━ -->
+<header class="recruit-header">
+  <span class="rh-badge">受付中</span>
+  <p class="rh-title">現在募集中！</p>
+  <p class="rh-msg">当日参加コース・応援サポーター<br>お申し込み受付中</p>
+  <a class="rh-cta" href="https://forms.gle/3DZF9BHnqWsiQJ2Q9" target="_blank" rel="noopener">当日参加・応援サポーターに申し込む</a>
+</header>
 
-<!-- ━━━ カウントダウン（トップ） ━━━ -->
-<div class="cd-top">
-  <a class="countdown" id="countdown" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform" target="_blank" rel="noopener">
-    <p class="cd-label">🔥 英語レッスン付き 親子セット・単独参加<br>お申込み締め切りまで</p>
-    <div class="cd-timer">
-      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-cap">日</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-cap">時間</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-cap">分</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-cap">秒</span></div>
-    </div>
-    <p class="cd-deadline">2026年 8月5日（水）12:00 まで</p>
-    <p class="cd-cta">👉 タップして申し込む</p>
-    <p class="cd-ended-msg">お申込みを締め切りました。ありがとうございました！</p>
+<!-- ━━━ 募集チラシ ━━━ -->
+<div class="flyer-wrap">
+  <a class="flyer-link" href="https://forms.gle/3DZF9BHnqWsiQJ2Q9" target="_blank" rel="noopener">
+    <img class="flyer-img"
+         src="assets/nagoya-castle-program-recruitment.png"
+         alt="世界と話そう 日本を伝えよう 名古屋城プログラム 当日参加・応援サポーター募集チラシ"
+         width="1122" height="1402" loading="eager" fetchpriority="high">
   </a>
+  <p class="flyer-cta-text">9月6日、名古屋城で世界とつながる一日を、一緒につくりませんか？</p>
+  <a class="flyer-cta-btn" href="https://forms.gle/3DZF9BHnqWsiQJ2Q9" target="_blank" rel="noopener">当日参加・応援サポーターに申し込む</a>
 </div>
 
 <!-- ━━━ HERO ━━━ -->
@@ -844,17 +874,74 @@
     </div>
   </section>
 
-  <!-- ━━━ 3つの参加方法（料金） ━━━ -->
+  <!-- ━━━ 募集案内文 ━━━ -->
+  <section class="sec">
+    <p class="sec-eyebrow">RECRUITING</p>
+    <h2 class="sec-title"><span class="u">募集！！</span></h2>
+    <div class="recruit-copy">
+      <h3>参加の形は、2つ</h3>
+      <p>これからの参加の形としては、<strong>当日参加コース</strong>と<strong>応援サポーター</strong>の2つがあります。</p>
+      <p><strong>当日参加コース</strong>は、ご自身もプログラム参加者として、英語で話したり、日本を伝える体験を楽しんでいただく形です。<br>
+      名古屋城入場料、使えるフレーズ集、カレンダー付きで、参加費は<span class="price">5,000円</span>です。</p>
+      <p><strong>応援サポーター</strong>は、子どもたちの挑戦を見守ったり、声かけや写真撮影など、場を一緒に支えていただく形です。<br>
+      参加費は<span class="price">2,000円</span>で、名古屋城の入場料も含まれています。</p>
+      <p>子どもたちに外国の方と話す機会を優先しながら、サポーターご自身も外国の方との交流を楽しめます。ピンクTシャツは各自でご購入いただきます。</p>
+    </div>
+  </section>
+
+  <!-- ━━━ 現在募集中の参加方法（料金） ━━━ -->
   <section class="sec" id="plans">
-    <p class="sec-eyebrow">3 PLANS</p>
-    <h2 class="sec-title">3つの<span class="u">参加方法</span></h2>
-    <p class="sec-lead">自分に合ったスタイルで参加しよう！<br><b style="color:var(--pink-deep)">締め切り後も、8月20日まで今からご参加いただけます 🌸</b></p>
+    <p class="sec-eyebrow">2 WAYS TO JOIN</p>
+    <h2 class="sec-title">現在募集中の<span class="u">2つの参加方法</span></h2>
+    <p class="sec-lead">どちらも同じ申込フォームから、参加区分を選んでお申し込みいただけます。</p>
 
-    <img class="media-photo" src="assets/plans-hikaku.png" alt="選べる！3つの参加方法 比較表" onerror="this.style.display='none'">
+    <div class="plans-open">
+      <!-- 当日参加コース（受付中） -->
+      <div class="plan c">
+        <div class="plan-status open">受付中</div>
+        <div class="plan-head">
+          <div class="plan-name">当日参加コース</div>
+          <div class="plan-price">5,000<small>円</small></div>
+        </div>
+        <div class="plan-body">
+          <ul>
+            <li>名古屋城入場料込み</li>
+            <li>使えるフレーズ集付き</li>
+            <li>カレンダー付き</li>
+            <li>ご自身も参加者として、英語で話したり、日本を伝える体験を楽しめる</li>
+          </ul>
+          <a class="plan-apply" href="https://forms.gle/3DZF9BHnqWsiQJ2Q9" target="_blank" rel="noopener">🌱 当日参加コースに申し込む</a>
+        </div>
+      </div>
 
-    <div class="plans">
+      <!-- 応援サポーター（受付中） -->
       <div class="plan a">
         <div class="plan-status open">受付中</div>
+        <div class="plan-head">
+          <div class="plan-name">応援サポーター</div>
+          <div class="plan-price">2,000<small>円</small></div>
+        </div>
+        <div class="plan-body">
+          <ul>
+            <li>名古屋城入場料込み</li>
+            <li>子どもたちの挑戦を見守る</li>
+            <li>声かけや移動時のサポート</li>
+            <li>活動中の写真撮影のお手伝い</li>
+            <li>子どもたちの「できた！」を一緒に喜ぶ</li>
+            <li>子どもたちの交流機会を優先しながら、ご自身も外国の方と交流可能</li>
+            <li>ピンクTシャツは各自購入</li>
+          </ul>
+          <a class="plan-apply" href="https://forms.gle/3DZF9BHnqWsiQJ2Q9" target="_blank" rel="noopener">💗 応援サポーターに申し込む</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="closed-label">― 受付を終了したプラン ―</p>
+    <div class="plans-closed">
+      <!-- 親子セット（受付終了） -->
+      <div class="plan a closed" aria-label="親子セットは受付を終了しました">
+        <div class="plan-stamp" aria-hidden="true">申し込み終了</div>
+        <div class="plan-status closed">受付終了</div>
         <div class="plan-head">
           <div class="plan-name">親子セット</div>
           <div class="plan-price">20,000<small>円</small></div>
@@ -867,13 +954,14 @@
             <li>名古屋城 入場券（親子分）</li>
             <li>カレンダー 1冊</li>
           </ul>
-          <p class="plan-note">今からでもOK！1回目のオンラインはアーカイブでキャッチアップ、2回目（8/20）のレッスンにご参加いただけます（8/20まで）。</p>
-          <a class="plan-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform?usp=pp_url&amp;entry.866760440=%E8%A6%AA%E5%AD%90%E3%82%BB%E3%83%83%E3%83%88%EF%BC%8820,000%E5%86%86%EF%BC%89" target="_blank" rel="noopener">🌸 親子セットで申し込む</a>
+          <p class="plan-ended">申し込みは終了しました</p>
         </div>
       </div>
 
-      <div class="plan b">
-        <div class="plan-status open">受付中</div>
+      <!-- 単独参加（受付終了） -->
+      <div class="plan b closed" aria-label="単独参加は受付を終了しました">
+        <div class="plan-stamp" aria-hidden="true">申し込み終了</div>
+        <div class="plan-status closed">受付終了</div>
         <div class="plan-head">
           <div class="plan-name">単独参加</div>
           <div class="plan-price">15,000<small>円</small></div>
@@ -886,26 +974,7 @@
             <li>名古屋城 入場券（1名分）</li>
             <li>カレンダー 1冊</li>
           </ul>
-          <p class="plan-note">今からでもOK！1回目のオンラインはアーカイブでキャッチアップ、2回目（8/20）のレッスンにご参加いただけます（8/20まで）。</p>
-          <a class="plan-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform?usp=pp_url&amp;entry.866760440=%E5%8D%98%E7%8B%AC%E5%8F%82%E5%8A%A0%EF%BC%8815,000%E5%86%86%EF%BC%89" target="_blank" rel="noopener">🌊 単独参加で申し込む</a>
-        </div>
-      </div>
-
-      <div class="plan c">
-        <div class="plan-status open">受付中</div>
-        <div class="plan-head">
-          <div class="plan-name">当日参加</div>
-          <div class="plan-price">5,000<small>円</small></div>
-        </div>
-        <div class="plan-body">
-          <ul>
-            <li>事前ガイダンス</li>
-            <li>当日プログラム参加</li>
-            <li>名古屋城 入場券（1名分）</li>
-            <li>カレンダー 1冊</li>
-          </ul>
-          <p class="plan-note">オンライン講座なしでOK！事前ガイダンス＋名古屋城の当日だけ、気軽にご参加いただけます。（9/6・12:30 集合）</p>
-          <a class="plan-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform?usp=pp_url&amp;entry.866760440=%E5%BD%93%E6%97%A5%E5%8F%82%E5%8A%A0%EF%BC%885,000%E5%86%86%EF%BC%89" target="_blank" rel="noopener">🌱 当日参加で申し込む</a>
+          <p class="plan-ended">申し込みは終了しました</p>
         </div>
       </div>
     </div>
@@ -1027,15 +1096,13 @@
     <h2 class="sec-title">お申込み<span class="u">について</span></h2>
 
     <div class="apply-card">
-      <span class="apply-badge">申込受付中</span>
-      <p class="big">お申し込みは、<br>各コースのボタンからどうぞ ✨</p>
+      <span class="apply-badge">受付中</span>
+      <p class="big">当日参加・応援サポーター<br>お申し込み受付中</p>
       <p>
-        お申し込みが完了すると、<br>
-        お振込み先のご案内メールが自動で届きます。<br>
-        ご入金の確認ができましたら、<br>
-        完了メールをお送りしますね 😊
+        フォームを開き、<br>
+        ご希望の参加区分を選択してください。
       </p>
-      <a class="oc-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfGs9lH0eGJc6gE0c4dB8abNcPZXvQ5LaPsGryTZ7rsTncaIQ/viewform" target="_blank" rel="noopener">📝 申し込みフォームを開く</a>
+      <a class="oc-btn" style="background:var(--pink);box-shadow:0 6px 16px rgba(232,106,134,.28);" href="https://forms.gle/3DZF9BHnqWsiQJ2Q9" target="_blank" rel="noopener">📝 申込フォームを開く</a>
       <p style="margin-top:18px;">
         最新情報はオープンチャット<br>「🌏世界と話そう🇯🇵」でもお届けしています。
       </p>
@@ -1070,26 +1137,6 @@
   <img src="logo.jpg" alt="Today Japan">
   <p>© Today Japan株式会社 ／ <a href="https://todayjapan.net">todayjapan.net</a></p>
 </div>
-
-<script>
-(function(){
-  var target = new Date('2026-08-05T12:00:00+09:00').getTime();
-  var elD=document.getElementById('cd-days'), elH=document.getElementById('cd-hours'),
-      elM=document.getElementById('cd-mins'), elS=document.getElementById('cd-secs'),
-      box=document.getElementById('countdown');
-  if(!elD) return;
-  function pad(n){ return (n<10?'0':'')+n; }
-  function tick(){
-    var diff = target - Date.now();
-    if(diff<=0){ box.classList.add('ended'); elD.textContent='0'; elH.textContent='00'; elM.textContent='00'; elS.textContent='00'; return; }
-    elD.textContent = Math.floor(diff/86400000);
-    elH.textContent = pad(Math.floor(diff%86400000/3600000));
-    elM.textContent = pad(Math.floor(diff%3600000/60000));
-    elS.textContent = pad(Math.floor(diff%60000/1000));
-  }
-  tick(); setInterval(tick, 1000);
-})();
-</script>
 
 </body>
 </html>
