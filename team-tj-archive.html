@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>TEAM TodayJapan Zoomアーカイブ</title>
+<style>
+  :root{
+    --ink:#2b2724;
+    --ink-soft:#5b554f;
+    --paper:#fbf8f3;
+    --card:#ffffff;
+    --gold:#b08d3f;
+    --gold-light:#d8c79b;
+    --gold-pale:#f5edda;
+    --red:#9b2427;
+    --red-deep:#7a1a1c;
+    --line:rgba(43,39,36,.13);
+    --ok:#2f6b3f;
+    --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+    --sans:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#efe9e1;
+      --ink-soft:#c3bab0;
+      --paper:#1d1a18;
+      --card:#28241f;
+      --gold:#d2b26a;
+      --gold-light:#8a7444;
+      --gold-pale:#3a3224;
+      --line:rgba(239,233,225,.16);
+      --ok:#8fcf9e;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#efe9e1;
+    --ink-soft:#c3bab0;
+    --paper:#1d1a18;
+    --card:#28241f;
+    --gold:#d2b26a;
+    --gold-light:#8a7444;
+    --gold-pale:#3a3224;
+    --line:rgba(239,233,225,.16);
+    --ok:#8fcf9e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.85;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ━━━ HERO ━━━ */
+  .hero{
+    position:relative;
+    background:var(--red-deep);
+    color:#fff;
+    padding:52px 16px 44px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0 L60 60 M60 0 L0 60' stroke='rgba(255,255,255,.06)' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='10' fill='none' stroke='rgba(255,255,255,.06)' stroke-width='1'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;bottom:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,transparent,#b08d3f,#d8c79b,#b08d3f,transparent);
+  }
+  .hero-eyebrow{
+    position:relative;
+    font-size:12px;letter-spacing:.3em;color:#d8c79b;
+  }
+  .hero h1{
+    position:relative;
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(24px,6.4vw,34px);
+    letter-spacing:.08em;
+    line-height:1.5;
+    margin-top:10px;
+  }
+  .hero p{
+    position:relative;
+    font-size:14px;color:rgba(255,255,255,.85);
+    margin-top:14px;
+  }
+
+  /* ━━━ HOW TO ━━━ */
+  .wrap{max-width:640px;margin:0 auto;padding:0 16px}
+  .howto{
+    margin:28px auto 8px;
+    background:var(--gold-pale);
+    border:1px solid var(--gold-light);
+    border-radius:12px;
+    padding:18px 18px 16px;
+    font-size:14.5px;
+  }
+  .howto h2{
+    font-family:var(--serif);
+    font-size:16px;font-weight:600;
+    color:var(--red);
+    margin-bottom:6px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .howto h2{color:var(--gold)}
+  }
+  :root[data-theme="dark"] .howto h2{color:var(--gold)}
+  .howto ol{padding-left:1.3em}
+  .howto li+li{margin-top:2px}
+
+  /* ━━━ LIST ━━━ */
+  .list{list-style:none;margin:24px 0 8px;display:grid;gap:14px}
+  .item{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .item-head{
+    width:100%;
+    display:flex;gap:14px;align-items:center;
+    padding:16px;
+    background:none;border:0;cursor:pointer;
+    text-align:left;color:inherit;font:inherit;
+  }
+  .date{
+    flex:none;
+    width:62px;
+    text-align:center;
+    border-right:1px solid var(--line);
+    padding-right:12px;
+  }
+  .date .md{
+    display:block;
+    font-family:var(--serif);
+    font-size:20px;font-weight:600;line-height:1.3;
+    color:var(--red);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .date .md{color:var(--gold)}
+  }
+  :root[data-theme="dark"] .date .md{color:var(--gold)}
+  .date .slot{display:block;font-size:12px;color:var(--ink-soft)}
+  .title{flex:1;min-width:0}
+  .title strong{
+    display:block;
+    font-family:var(--serif);
+    font-weight:600;font-size:16.5px;line-height:1.55;
+  }
+  .title small{font-size:12.5px;color:var(--ink-soft)}
+  .state{
+    flex:none;
+    font-size:12px;
+    color:var(--ink-soft);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:2px 10px;
+    white-space:nowrap;
+  }
+  .item.open .state{color:var(--ok);border-color:var(--ok)}
+
+  .panel{
+    border-top:1px dashed var(--line);
+    padding:16px;
+  }
+  .panel[hidden]{display:none}
+  .panel label{display:block;font-size:13.5px;color:var(--ink-soft);margin-bottom:8px}
+  .row{display:flex;gap:8px}
+  .row input{
+    flex:1;min-width:0;
+    font:inherit;font-size:16px;
+    padding:10px 12px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  .row input:focus{outline:2px solid var(--gold);outline-offset:1px}
+  .btn{
+    flex:none;
+    font:inherit;font-size:15px;font-weight:600;
+    padding:10px 18px;
+    border:0;border-radius:10px;
+    background:var(--red);color:#fff;
+    cursor:pointer;
+  }
+  .btn:disabled{opacity:.6;cursor:wait}
+  .msg{font-size:13.5px;margin-top:8px;min-height:1.4em;color:var(--red)}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .msg{color:#f0a3a3}
+  }
+  :root[data-theme="dark"] .msg{color:#f0a3a3}
+  .watch{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    font-weight:600;font-size:16px;
+    padding:13px 16px;
+    border-radius:12px;
+    background:var(--red);color:#fff;
+  }
+  .note{font-size:12.5px;color:var(--ink-soft);margin-top:10px}
+
+  footer{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    padding:28px 16px 40px;
+  }
+  footer .musubu{font-family:var(--serif);font-size:15px;color:var(--ink);margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-eyebrow">TEAM TodayJapan</div>
+  <h1>Zoomアーカイブ</h1>
+  <p>月2回のZoomを、あとから見返せる場所です</p>
+</header>
+
+<main class="wrap">
+  <section class="howto">
+    <h2>見かた</h2>
+    <ol>
+      <li>見たい回を選んでください</li>
+      <li>その回の合言葉を、ひらがなで入れてください</li>
+      <li>「録画を見る」から、Zoomの録画が開きます</li>
+    </ol>
+    <p class="note">合言葉は、よしこさんに個別に聞いてくださいね。一度ひらいた回は、この端末ではしばらく合言葉なしで見られます。</p>
+  </section>
+
+  <ul class="list" id="list"></ul>
+</main>
+
+<footer>
+  <p class="musubu">今日もあなたはサイコーです。</p>
+  <p>TEAM TodayJapan メンバー専用ページ／リンクの転送はご遠慮ください</p>
+</footer>
+
+<script>
+  // 録画リンクは合言葉で暗号化してある。合言葉そのものはこのページに入っていない。
+  const SEALED = {"iter":250000,"boxes":{"1009":{"s":"RpqS4iSIPhtN8z+1u+eV2g==","i":"mugghz7LC7hAGTp2","c":"StD4wvLK1xKwqKAUxJLCmj+XYFMxJT3LF+ChNOJTbV6cyAAHbWMGDSQQYZslfVgUvBeD+cvOIowtD4rQkLWctc/V0yPOvP8qXlvP1/+iBC9eEkxv9xGMuP8ig7mgCiZKWUCa8jdSnulmuWz9fF9fyvE6oKmNOON63idyfkxlHKoNqdnj563BKsGVU+/+D9z4DPpHZFTX5SLHcZwDbMfO0R4WmraQjOBkegC+V+TcoAXvr9LeQE8HLsYdxfLLbSXLaVkKoUFJgsDd4pp5Nz5HcA1I6n+H+MSenpoy/pk9T0w6mGycb0GSWKn7"},"0316":{"s":"RsKmKQoFubjLVq5ENQT/UA==","i":"SNRa7mz1oIsmuaNA","c":"yQ2/SoRROszNoEa783mFNQ3XXcDMV7xyUUmc7QgcbzYPCks26ZCDhWmDex/fjkRG+5hmttP3ZdgB14xvNMG9A1L6cEik3Dqjh6ZHkx/PhT9p/1VQsMYJSTi75ZuoECw5x9bCVBOdRB9RpfitZdW9kpGIM7LD2ZV3OLMCka0uqFzA8HdNrRtvCTNeEAc8qdcmatDqZjRgX9FkRC1+mNeq5Be6CcageH/izEw7jcQLNmY/PsWi4045ktUI3j5lT3cVYmRl5jeGFp2TJqZL3PRxfI7HlCpF2GEXs0dAfX/KDH0H0zZsoaRCtCs="},"0413":{"s":"hdzaY3i5tSqofphxEgu71A==","i":"lV4MHpXT3EARweew","c":"4lz1CGeiDX2RTdghPCcGiQK/1Ah3n0GpPltcl+tUJPeAjT5iJ/QZKS9nCDXwUTFGa4mt5TiE2r5jwmqm3L7Ak2GH9vmQHZq/qWoiwhN/E7iJJAMvUMVIZ6VBQHl/p9aczg+qZ8N9B08h24R4AjCWwQSpeLHBR2u67zMpItkOZ1FhV1LR7N/ZNUMHwsJG5qv65jlzySk8hxkh+D0gnx8sbTTqo35n1O2rLr4ffF3wMNfZMFBCX822/0RHHiQadwD/NV8nOdzJRMR+mbHzM+i4z57yVzpRrlkvbu5LNivK1aic5LeJLheOapg9"},"0511":{"s":"0l9qMbWVlw7G/iMIgcwEew==","i":"V9uhL2GFtUzlO/Py","c":"dy/+vW+calbIlZJ5y0P0Tp3+gFgmN7tVpfox+TLG+CfVUWDoVIdK25pqraE0c1+Fxxd77MtU4YktT7XFd9JumQ4Y2A/idlLmNJGxtfoUY4RgfL89rxdO1T6Rf+gtoJVB1GOwlWR8KTsHzDIf151GFYKaxD02jRGiIBf8SimocHizoPWVAHIIZDlFUVfm0uz1tqLz/zgUyb7rNYkYY5WwGDThbM+kUWXcmiV/T+XeLmnRzWFRziusJBcRDvOO1X5YnbLXHvaM6Batjd05kPJcJq0uVvJnOxl/5Vjzw0qW7AII4+UAo1yZIgE="},"0803":{"s":"qCV/QK3ivXaaRwJwUgsY2g==","i":"E2vJ1f56rnyz6af5","c":"8LR6EOejwSObPFi6PyO+rSPcZ96rb/OhHKmsxn4p7ZmTfvEunqQEL9hXOk4+erjB6doFoSgEfqdOx2X6Xr4iPDN31HblFmg1BkQc0OgHgJ2nn9iHC/cvL5dbEHwkOLQfvBlg8jtrsaDuvkSi2zSj4DQ8IwBV49Bm7PdEiI7feMhaGW7O9Q/j2Keg3YYzSsEIGGHjhvEd03Itmr32RX0rYeenE/GCfMy/YJl2eTsbYUQzOfuOIU5vt3AscvDIC6PI/uTcrOB7Lwivv5w8cQwmqwnAKZxQPPXUyFps1MnM1L943wpPvobVtINH"},"0914":{"s":"AMpzHwkPvB3LPGhU42DM7w==","i":"hHXgT4x9WYW9qfuA","c":"hIm5QCdEw0wsimxeJxbgl6e+Q0b6JKOG23Btc2DrXV/TuSvls6SYNzRy6c1jKMTY088kGjv3jf/X3PB6M6QnUd8KApwcKk3QdTPrrqPx1ppreSJ0VwR4Vpa/deKpA1HyAPF6mns00B2wMfO69VxUJh6qxYB3nhxheFHujfa1RN7BaolUMaDZIyP7dMLLGx+LszGfcIRwk2HzeMhryrewqAdWEtjteCVUpevnyFgizJw2Bqv4TGt+iynbkH9OTWmg7J8UgNYnnawBRLn4/OGOrvcit6L/vX0kEaa9Iad614kAAmMkl6+SQqXC"}}};
+
+  const SESSIONS = [
+    {id:'1009', md:'10/9',  slot:'金・昼', mins:84,  title:'干支の羅針盤'},
+    {id:'0914', md:'9/14',  slot:'月・昼', mins:94,  title:'言葉と名前、言霊のちから'},
+    {id:'0803', md:'8/3',   slot:'月・昼', mins:110, title:'古事記入門　神様も「やらかす」'},
+    {id:'0511', md:'5/11',  slot:'月・昼', mins:100, title:'一霊四魂とコミュニケーションカード'},
+    {id:'0413', md:'4/13',  slot:'月・昼', mins:85,  title:'陰と陽／器を持つ「三手の法則」'},
+    {id:'0316', md:'3/16',  slot:'月・夜', mins:57,  title:'お箸に宿る日本の心'},
+  ];
+
+  const STORE_KEY = 'tj-archive-open';
+  const KEEP_DAYS = 30;
+
+  // 全角半角をそろえ、カタカナをひらがなに、空白を除く（暗号化したときと同じ）
+  const normalize = (s) => s.normalize('NFKC')
+    .replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60))
+    .replace(/\s+/g, '').toLowerCase();
+
+  const fromB64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+
+  async function unseal(id, word){
+    const box = SEALED.boxes[id];
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(normalize(word)), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey(
+      {name:'PBKDF2', salt:fromB64(box.s), iterations:SEALED.iter, hash:'SHA-256'},
+      base, {name:'AES-GCM', length:256}, false, ['decrypt']);
+    const plain = await crypto.subtle.decrypt({name:'AES-GCM', iv:fromB64(box.i)}, key, fromB64(box.c));
+    return new TextDecoder().decode(plain);
+  }
+
+  function loadOpened(){
+    try{
+      const all = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      const now = Date.now();
+      for (const id in all){ if (all[id].until < now) delete all[id]; }
+      return all;
+    }catch(e){ return {}; }
+  }
+  function saveOpened(id, url){
+    try{
+      const all = loadOpened();
+      all[id] = {url, until: Date.now() + KEEP_DAYS * 86400000};
+      localStorage.setItem(STORE_KEY, JSON.stringify(all));
+    }catch(e){}
+  }
+
+  function showWatch(li, url){
+    li.classList.add('open');
+    li.querySelector('.state').textContent = 'ひらいています';
+    const panel = li.querySelector('.panel');
+    panel.innerHTML = '';
+    const a = document.createElement('a');
+    a.className = 'watch';
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = '録画を見る';
+    const note = document.createElement('p');
+    note.className = 'note';
+    note.textContent = 'Zoomの録画ページが新しいタブで開きます。';
+    panel.append(a, note);
+  }
+
+  const opened = loadOpened();
+  const list = document.getElementById('list');
+
+  for (const s of SESSIONS){
+    const li = document.createElement('li');
+    li.className = 'item';
+    li.innerHTML = `
+      <button class="item-head" type="button" aria-expanded="false">
+        <span class="date"><span class="md">${s.md}</span><span class="slot">${s.slot}</span></span>
+        <span class="title"><strong>${s.title}</strong><small>録画 約${s.mins}分</small></span>
+        <span class="state">合言葉</span>
+      </button>
+      <div class="panel" hidden>
+        <form>
+          <label for="kw-${s.id}">この回の合言葉（ひらがな）</label>
+          <div class="row">
+            <input id="kw-${s.id}" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+            <button class="btn" type="submit">ひらく</button>
+          </div>
+          <p class="msg" aria-live="polite"></p>
+        </form>
+      </div>`;
+    const head = li.querySelector('.item-head');
+    const panel = li.querySelector('.panel');
+    head.addEventListener('click', () => {
+      const show = panel.hidden;
+      panel.hidden = !show;
+      head.setAttribute('aria-expanded', String(show));
+      const input = panel.querySelector('input');
+      if (show && input) input.focus();
+    });
+    const form = li.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = form.querySelector('input');
+      const btn = form.querySelector('.btn');
+      const msg = form.querySelector('.msg');
+      if (!input.value.trim()){ msg.textContent = '合言葉を入れてください'; return; }
+      btn.disabled = true;
+      msg.textContent = '';
+      try{
+        const url = await unseal(s.id, input.value);
+        saveOpened(s.id, url);
+        showWatch(li, url);
+      }catch(err){
+        msg.textContent = '合言葉がちがうようです。ひらがなで、もう一度どうぞ';
+        btn.disabled = false;
+        input.select();
+      }
+    });
+    list.append(li);
+    if (opened[s.id]) showWatch(li, opened[s.id].url);
+  }
+</script>
+</body>
+</html>
